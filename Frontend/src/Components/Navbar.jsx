@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Flex, Heading, Image, Tr } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "./Navbar.css";
+import data from "./data.json"
+import { ComponentModel } from "./ComponentModel";
 export const Navbar = () => {
+  const [dat,setDat]=useState([[]])
+
+  // console.log(data) 
   useEffect(() => {
+    
     const toggleProductUp = (element) => {
       element.style.display = "block";
       element.addEventListener("mouseover", () => {
@@ -41,22 +47,24 @@ export const Navbar = () => {
     var fourth = document.getElementById("2nd_dropdown");
 
     if (third) {
-      fourth.style.display = "none";
+      fourth.style.display = "none"
       third.addEventListener("mouseover", () => {
-        togglethirdUp(fourth);
-      });
+        togglethirdUp(fourth)
+      })
       third.addEventListener("mouseout", () => {
         toggleProductUpOff(fourth);
-      });
+      })
     }
+    setDat(data[0])
+    console.log(typeof(dat))
   });
-
+ 
   return (
     <Box>
       <Box boxShadow="md" rounded="md" bg="white">
         <Box
           pl="10%"
-          pt="1.5%"
+          pt="1%"
           pr="10%"
           w="100%"
           justifyContent="space-between"
@@ -78,25 +86,25 @@ export const Navbar = () => {
             justifyContent="center"
             w="60%"
             gap="10%"
+            mt="0.5%"
             display="flex"
           >
-            <Box display="flex" flexDirection="column">
-              <Box
-                id="1st"
-                _hover={{
+            <Box display="flex"  _hover={{
                   cursor: "pointer",
-                }}
+                }}flexDirection="column" id="1st">
+              <Box
+                
+              
               >
                 Product <i class="fa-solid fa-caret-down"></i>
               </Box>
             </Box>
 
-            <Box display="flex" flexDirection="column">
-              <Box
-                id="2nd"
-                _hover={{
+            <Box display="flex" _hover={{
                   cursor: "pointer",
-                }}
+                }} id="2nd" flexDirection="column">
+              <Box
+                 
               >
                 Templates <i class="fa-solid fa-caret-down"></i>
               </Box>
@@ -222,7 +230,7 @@ export const Navbar = () => {
         <Box w="50%">
           <Box p="10%" pt="-10%" fontSize={15} >
             {" "}
-            <Flex mt="5%">
+            <Flex mt="5%" id="pehla">
               <Image
                 style={{ opacity: 0.7 }}
                 src="https://c8.alamy.com/comp/2B37CXF/document-icon-template-black-color-editable-document-icon-symbol-flat-vector-illustration-for-graphic-and-web-design-2B37CXF.jpg"
@@ -298,7 +306,13 @@ export const Navbar = () => {
 
         <Box >
           <Heading as="h5"pt="5%" size="md">Featured Contract Templates</Heading>
-       
+            <Box>
+              
+           
+              
+               <ComponentModel  item={dat}/>
+           
+            </Box>
         </Box>
       </Box>
     </Box>

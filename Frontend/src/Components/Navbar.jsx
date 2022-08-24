@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Button, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import  './Navbar.css'
 export const Navbar = () => {
   useEffect(() => {
     const toggleProductUp = (element) => {
@@ -42,7 +43,8 @@ export const Navbar = () => {
   });
 
   return (
-    <Box boxShadow="md" rounded="md" bg="white">
+<Box>
+<Box boxShadow="md" rounded="md" bg="white">
       <Box
         pl="10%"
         pt="1.5%"
@@ -65,135 +67,28 @@ export const Navbar = () => {
         <Box
           color="grey"
           justifyContent="center"
-          w="60%"
+          w="60%" 
           gap="10%"
           display="flex"
         >
           <Box display="flex"  flexDirection="column">
-         <Box id="1st">Product</Box>
+         <Box id="1st"   _hover={{
+            cursor:"pointer"
+            }}>Product{" "} <i class="fa-solid fa-caret-down"></i></Box>
         
-            <Box id="1st_dropdown">
-              <Box>
-                <h5>Bonsai Workflow</h5>
-                <p>
-                  Look professional, <br /> win more clients <br />
-                  and manage your <br />
-                  business from <br />
-                  one place
-                </p>
-              </Box>
-
-              <Box>
-                <h5>Bonsai Tax</h5>
-                <p>
-                  Track expenses
-                  <br />, maximize taxs
-                  <br /> writeoffs
-                  <br />
-                  and estimate <br />
-                  taxes without
-                  <br /> headache.
-                </p>
-              </Box>
-              <Box>
-                <h5>Bonsai Cash</h5>
-                <p>
-                  Bonsai's is
-                  <br /> all-in-one
-                  <br /> financial hub:
-                  <br />
-                  no fess
-                  <br /> lightning fast
-                  <br /> payouts
-                </p>
-              </Box>
-            </Box>
+          
           </Box>
 
           <Box display="flex" flexDirection="column">
-            <Box id="2nd">Templates</Box>
-            <Box id="2nd_dropdown">
-              <li>
-                <a className="dropdown-item p-3">
-                  <img
-                    style={{ opacity: 0.7 }}
-                    src="https://c8.alamy.com/comp/2B37CXF/document-icon-template-black-color-editable-document-icon-symbol-flat-vector-illustration-for-graphic-and-web-design-2B37CXF.jpg"
-                    alt=""
-                    width="30"
-                    height="30"
-                  />{" "}
-                  Proposal Template
-                </a>
-              </li>
-
-              <li>
-                <a className="dropdown-item p-3">
-                  <img
-                    style={{ opacity: 0.7 }}
-                    src="https://icon-library.com/images/document-icon-png/document-icon-png-0.jpg"
-                    alt=""
-                    width="30"
-                    height="30"
-                  />
-                  Invioce Template{" "}
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item p-3">
-                  <img
-                    style={{ opacity: 0.7 }}
-                    src="https://icon-library.com/images/icon-template-png/icon-template-png-8.jpg"
-                    alt=""
-                    width="30"
-                    height="30"
-                  />
-                  Agreement Template{" "}
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item p-3">
-                  <img
-                    style={{ opacity: 0.7 }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ru6M8BABzQdwkHA5Ooo4Hr6Qfz6X0r4Rb9E1n5VUofbYz6wAClbyHSmJXHq8Ncm7t1Q&usqp=CAU"
-                    alt=""
-                    width="30"
-                    height="30"
-                  />
-                  Quotes Template{" "}
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item p-3">
-                  <img
-                    style={{ opacity: 0.7 }}
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Globe_icon_%28the_Noun_Project_30701%29.svg/1200px-Globe_icon_%28the_Noun_Project_30701%29.svg.png"
-                    alt=""
-                    width="30"
-                    height="30"
-                  />
-                  Scope of work Template{" "}
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item p-3">
-                  <img
-                    style={{ opacity: 0.7 }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgcFytkcl-QRb1n5gxbA2jujmLhLJj9zyBonaCH76ht5rwhwaWMQpmeTXG-4_sGVPkJqg&usqp=CAU"
-                    alt=""
-                    width="30"
-                    height="30"
-                  />
-                  Brief Template{" "}
-                </a>
-              </li>
-            </Box>
+            <Box id="2nd">Templates {" "}<i class="fa-solid fa-caret-down"></i></Box>
+         
           </Box>
 
           <Box>Pricing</Box>
           <Box>Reviews</Box>
         </Box>
 
-        <Box position="relative" display="flex" w="20%">
+        <Box position="relative"  display="flex" w="20%">
           <Button
             colorScheme="white"
             color="#00b289"
@@ -221,5 +116,121 @@ export const Navbar = () => {
         </Box>
       </Box>
     </Box>
+      <Box id="1st_dropdown" className="ok" position="relative"  ml='30%' >
+      <Box>
+        <Heading  as='h5' size='md'>Bonsai Workflow</Heading>
+        <p>
+          Look professional, <br /> win more clients <br />
+          and manage your <br />
+          business from <br />
+          one place
+        </p>
+      </Box>
+
+      <Box>
+        <Heading  as='h5' size='md'>Bonsai Tax</Heading>
+        <p>
+          Track expenses
+          <br />, maximize taxs
+          <br /> writeoffs
+          <br />
+          and estimate <br />
+          taxes without
+          <br /> headache.
+        </p>
+      </Box>
+      <Box>
+        <Heading  as='h5' size='md'>Bonsai Cash</Heading>
+        <p>
+          Bonsai's is
+          <br /> all-in-one
+          <br /> financial hub:
+          <br />
+          no fess
+          <br /> lightning fast
+          <br /> payouts
+        </p>
+      </Box>
+    </Box>
+    <Box className="ok" w='20%' display="flex"boxShadow='2xl'rounded='md' bg='white' ml="40%" color="grey"id="2nd_dropdown">
+            <Box p="15%"  fontSize={15} >  <Flex mt="10%" >
+               
+               <img
+                 style={{ opacity: 0.7 }}
+                 src="https://c8.alamy.com/comp/2B37CXF/document-icon-template-black-color-editable-document-icon-symbol-flat-vector-illustration-for-graphic-and-web-design-2B37CXF.jpg"
+                 alt=""
+                 width="20"
+                 height="20"
+               />{" "}
+            <Box>   Proposal Template</Box>
+            
+           </Flex >
+
+           <Flex mt="10%" >
+            
+               <img
+                 style={{ opacity: 0.7 }}
+                 src="https://icon-library.com/images/document-icon-png/document-icon-png-0.jpg"
+                 alt=""
+                 width="20"
+                 height="20"
+               />
+               Invioce Template{" "}
+            
+           </Flex>
+           <Flex mt="10%" >
+            
+               <img
+                 style={{ opacity: 0.7 }}
+                 src="https://icon-library.com/images/icon-template-png/icon-template-png-8.jpg"
+                 alt=""
+                 width="20"
+                 height="20"
+               />
+               Agreement Template{" "}
+            
+           </Flex>
+
+           <Flex mt="10%" >
+            
+               <img
+                 style={{ opacity: 0.7 }}
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ru6M8BABzQdwkHA5Ooo4Hr6Qfz6X0r4Rb9E1n5VUofbYz6wAClbyHSmJXHq8Ncm7t1Q&usqp=CAU"
+                 alt=""
+                 width="20"
+                 height="20"
+               />
+               Quotes Template{" "}
+            
+           </Flex>
+           <Flex mt="10%" >
+            
+               <img
+                 style={{ opacity: 0.7 }}
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Globe_icon_%28the_Noun_Project_30701%29.svg/1200px-Globe_icon_%28the_Noun_Project_15701%29.svg.png"
+                 alt=""
+                 width="20"
+                 height="20"
+               />
+               Scope of work Template{" "}
+            
+           </Flex>
+           <Flex mt="10%" >
+            
+               <img
+                 style={{ opacity: 0.7 }}
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgcFytkcl-QRb1n5gxbA2jujmLhLJj9zyBonaCH76ht5rwhwaWMQpmeTXG-4_sGVPkJqg&usqp=CAU"
+                 alt=""
+                 width="20"
+                 height="20"
+               />
+               Brief Template{" "}
+            
+           </Flex></Box>
+           <Box  >
+
+           </Box>
+            </Box>
+</Box>
   );
 };

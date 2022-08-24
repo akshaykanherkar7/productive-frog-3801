@@ -285,7 +285,7 @@ export const Navbar = () => {
           </Box>
         </Box>
 
-        <Box >Hello madafakr</Box>
+        <Box ></Box>
       </Box>
     </Box>
   );

@@ -220,72 +220,86 @@ export const Navbar = () => {
 
 
         <Box w="50%">
-          <Box p="10%" fontSize={15} >
+          <Box p="10%" pt="-10%" fontSize={15} >
             {" "}
-            <Flex mt="10%">
-              <img
+            <Flex mt="5%">
+              <Image
                 style={{ opacity: 0.7 }}
                 src="https://c8.alamy.com/comp/2B37CXF/document-icon-template-black-color-editable-document-icon-symbol-flat-vector-illustration-for-graphic-and-web-design-2B37CXF.jpg"
                 alt=""
-                width="20"
-                height="20"
-              />{" "}
+                width="20px"
+                height="20px"
+              />{" "} &nbsp; &nbsp;
+              <Box> Contract Template</Box>
+            </Flex>
+            
+            <Flex mt="10%">
+              <Image
+                style={{ opacity: 0.7 }}
+                src="https://c8.alamy.com/comp/2B37CXF/document-icon-template-black-color-editable-document-icon-symbol-flat-vector-illustration-for-graphic-and-web-design-2B37CXF.jpg"
+                alt=""
+                width="20px"
+                height="20px"
+              />{" "}&nbsp; &nbsp;
               <Box> Proposal Template</Box>
             </Flex>
             <Flex mt="10%">
-              <img
+              <Image
                 style={{ opacity: 0.7 }}
                 src="https://icon-library.com/images/document-icon-png/document-icon-png-0.jpg"
                 alt=""
-                width="20"
-                height="20"
-              />
+                width="20px"
+                height="20px"
+              />&nbsp; &nbsp;
               Invioce Template{" "}
             </Flex>
             <Flex mt="10%">
-              <img
+              <Image
                 style={{ opacity: 0.7 }}
                 src="https://icon-library.com/images/icon-template-png/icon-template-png-8.jpg"
                 alt=""
-                width="20"
-                height="20"
+                width="20px"
+                height="20px"
               />
-              Agreement Template{" "}
+             {" "} &nbsp; &nbsp;Agreement Template
             </Flex>
             <Flex mt="10%">
-              <img
+              <Image
                 style={{ opacity: 0.7 }}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ru6M8BABzQdwkHA5Ooo4Hr6Qfz6X0r4Rb9E1n5VUofbYz6wAClbyHSmJXHq8Ncm7t1Q&usqp=CAU"
                 alt=""
-                width="20"
-                height="20"
+                width="20px"
+                height="20px"
               />
-              Quotes Template{" "}
+             {" "}&nbsp; &nbsp; Quotes Template
             </Flex>
             <Flex mt="10%">
-              <img
+              <Image
                 style={{ opacity: 0.7 }}
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Globe_icon_%28the_Noun_Project_30701%29.svg/1200px-Globe_icon_%28the_Noun_Project_15701%29.svg.png"
                 alt=""
-                width="20"
-                height="20"
-              />
+                width="20px"
+                height="20px"
+              />&nbsp; &nbsp;
               Scope of work Template{" "}
             </Flex>
             <Flex mt="10%">
-              <img
+              <Image
                 style={{ opacity: 0.7 }}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgcFytkcl-QRb1n5gxbA2jujmLhLJj9zyBonaCH76ht5rwhwaWMQpmeTXG-4_sGVPkJqg&usqp=CAU"
                 alt=""
-                width="20"
-                height="20"
-              />
+                width="20px"
+                height="20px"
+              />&nbsp; &nbsp;
               Brief Template{" "}
             </Flex>
           </Box>
         </Box>
 
-        <Box ></Box>
+        <Box >
+          <Heading as="h5"pt="5%" size="md">Featured Contract Templates</Heading>
+       
+        </Box>
       </Box>
     </Box>
   );

@@ -18,6 +18,7 @@ export const Navbar = () => {
   // setDat(data[0])
   // console.log(data)
   useEffect(() => {
+
     const toggleProductUp = (element) => {
       element.style.display = "block";
       element.addEventListener("mouseover", () => {
@@ -114,7 +115,10 @@ export const Navbar = () => {
 
     // console.log(typeof(dat))
   }, []);
-
+// console.log(data[0])
+useEffect(() =>{
+  setDat(data[0])
+},[])
   return (
     <Box>
       <Box boxShadow="md" rounded="md" bg="white">
@@ -397,14 +401,17 @@ export const Navbar = () => {
         </Box>
         <Box>
          
-          <Box>
-            <ComponentModel item={dat} />
+          <Box >
+            {
+              data.length>1?<ComponentModel item={dat} />:<ComponentModel item={data[0]} />
+            }
 
             <Flex
-              justifyContent="center"
-              pt="10%"
+            m="auto" p="auto"
+             position="absolute"
               color="#00b289"
-              m="auto"
+              bottom='0'
+              textAlign="center" justifyContent="center" ml="17%" mb="5%"
               fontWeight={600}
             >
               See All Templates

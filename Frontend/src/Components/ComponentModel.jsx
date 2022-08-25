@@ -4,7 +4,7 @@ import React from "react";
 export const ComponentModel = ({ item }) => {
   const {heading, a1, a2, a3, a4 } = item;
   return (
-    <Box h="100%" w="120%" p="5%" 
+    <Box h="100%" w="60%" position="absolute"p="5%" 
   >
      <Heading as="h5"  pt="5%" size="md">
             {heading}

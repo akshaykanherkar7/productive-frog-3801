@@ -42,10 +42,12 @@ UserController.post("/login", async (req, res) => {
     }
     if (result) {
       const token = jwt.sign(
-        { email: user.email, usrId: user._id },
+        { email: user.email, userId: user._id },
         process.env.jwt_secret_key
       );
       return res.status(200).send({ message: "Login Success", token: token });
+    } else {
+      return res.status(401).send({ message: "Invalid Credentials" });
     }
   });
 });

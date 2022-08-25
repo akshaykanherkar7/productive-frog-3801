@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Box, Button, Flex, Heading, Image, Tr } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image, Tr, useWhyDidYouUpdate } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "./Navbar.css";
 import data from "./data.json"
 import { ComponentModel } from "./ComponentModel";
 export const Navbar = () => {
-  const [dat,setDat]=useState([[]])
+  const [dat,setDat]=useState([data[0]])
 
   // console.log(data) 
   useEffect(() => {
@@ -32,6 +32,32 @@ export const Navbar = () => {
     const toggleProductUpOff = (element) => {
       element.style.display = "none";
     };
+    const toggleDataUp = (element,index) => {
+      
+      element.addEventListener("mouseover", () => {
+        setDat(data[index]);
+      });
+     
+    };
+
+
+
+    var pehla=document.getElementById("pehla")
+    if(pehla){
+      pehla.addEventListener("mouseover", () => {
+        toggleDataUp(pehla,0);
+      });
+     
+    }
+    var dusra=document.getElementById("dusra")
+    if(pehla){
+      dusra.addEventListener("mouseover", () => {
+        toggleDataUp(dusra,1);
+      });
+     
+    }
+
+
     var first = document.getElementById("1st");
     var second = document.getElementById("1st_dropdown");
 
@@ -55,8 +81,8 @@ export const Navbar = () => {
         toggleProductUpOff(fourth);
       })
     }
-    setDat(data[0])
-    console.log(typeof(dat))
+    // setDat(data[0])
+    // console.log(typeof(dat))
   });
  
   return (
@@ -159,11 +185,11 @@ export const Navbar = () => {
         color="grey"
         boxShadow="2xl"
         rounded="md"
+        position="absolute"
         bg="white"
         w="20%"
         p="2%"
         className="ok"
-        position="relative"
         ml="30%"
       >
         <Box pb="5%" borderBottom="1px solid grey">
@@ -215,22 +241,24 @@ export const Navbar = () => {
 
       <Box display="flex" 
         boxShadow="2xl"
-        border="1px solid blue"
         className="ok"
         rounded="md"
         bg="white"
         ml="35%"
         w="40%"
-        color="grey"
+        color=" #4c525a"
         id="2nd_dropdown"
+        
       >
         {" "}
 
 
-        <Box w="50%">
-          <Box p="10%" pt="-10%" fontSize={15} >
+        <Box w="50%" >
+          <Box  pt="-10%" fontSize={15} >
             {" "}
-            <Flex mt="5%" id="pehla">
+            <Flex id="pehla" p='8%'  _hover={{
+                  cursor: "pointer", bg:"rgb(234, 235, 233)"
+                }}>
               <Image
                 style={{ opacity: 0.7 }}
                 src="https://c8.alamy.com/comp/2B37CXF/document-icon-template-black-color-editable-document-icon-symbol-flat-vector-illustration-for-graphic-and-web-design-2B37CXF.jpg"
@@ -238,10 +266,12 @@ export const Navbar = () => {
                 width="20px"
                 height="20px"
               />{" "} &nbsp; &nbsp;
-              <Box> Contract Template</Box>
+              <Box > Contract Template</Box>
             </Flex>
             
-            <Flex mt="10%">
+            <Flex id='dusra'  p='8%'  _hover={{
+                  cursor: "pointer", bg:"rgb(234, 235, 233)"
+                }}>
               <Image
                 style={{ opacity: 0.7 }}
                 src="https://c8.alamy.com/comp/2B37CXF/document-icon-template-black-color-editable-document-icon-symbol-flat-vector-illustration-for-graphic-and-web-design-2B37CXF.jpg"
@@ -251,7 +281,9 @@ export const Navbar = () => {
               />{" "}&nbsp; &nbsp;
               <Box> Proposal Template</Box>
             </Flex>
-            <Flex mt="10%">
+            <Flex p='8%'  _hover={{
+                  cursor: "pointer", bg:"rgb(234, 235, 233)"
+                }}>
               <Image
                 style={{ opacity: 0.7 }}
                 src="https://icon-library.com/images/document-icon-png/document-icon-png-0.jpg"
@@ -261,7 +293,9 @@ export const Navbar = () => {
               />&nbsp; &nbsp;
               Invioce Template{" "}
             </Flex>
-            <Flex mt="10%">
+            <Flex   p='8%' _hover={{
+                  cursor: "pointer", bg:"rgb(234, 235, 233)"
+                }}>
               <Image
                 style={{ opacity: 0.7 }}
                 src="https://icon-library.com/images/icon-template-png/icon-template-png-8.jpg"
@@ -271,7 +305,9 @@ export const Navbar = () => {
               />
              {" "} &nbsp; &nbsp;Agreement Template
             </Flex>
-            <Flex mt="10%">
+            <Flex  p='8%'  _hover={{
+                  cursor: "pointer", bg:"rgb(234, 235, 233)"
+                }}>
               <Image
                 style={{ opacity: 0.7 }}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ru6M8BABzQdwkHA5Ooo4Hr6Qfz6X0r4Rb9E1n5VUofbYz6wAClbyHSmJXHq8Ncm7t1Q&usqp=CAU"
@@ -281,7 +317,9 @@ export const Navbar = () => {
               />
              {" "}&nbsp; &nbsp; Quotes Template
             </Flex>
-            <Flex mt="10%">
+            <Flex p='8%'  _hover={{
+                  cursor: "pointer", bg:"rgb(234, 235, 233)"
+                }}>
               <Image
                 style={{ opacity: 0.7 }}
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Globe_icon_%28the_Noun_Project_30701%29.svg/1200px-Globe_icon_%28the_Noun_Project_15701%29.svg.png"
@@ -291,7 +329,9 @@ export const Navbar = () => {
               />&nbsp; &nbsp;
               Scope of work Template{" "}
             </Flex>
-            <Flex mt="10%">
+            <Flex  p='8%'  _hover={{
+                  cursor: "pointer", bg:"rgb(234, 235, 233)"
+                }}>
               <Image
                 style={{ opacity: 0.7 }}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgcFytkcl-QRb1n5gxbA2jujmLhLJj9zyBonaCH76ht5rwhwaWMQpmeTXG-4_sGVPkJqg&usqp=CAU"
@@ -311,7 +351,7 @@ export const Navbar = () => {
            
               
                <ComponentModel  item={dat}/>
-           
+                <Flex justifyContent="center" pt="10%" color="#00b289"m='auto' fontWeight={600}>See All Templates</Flex>
             </Box>
         </Box>
       </Box>

@@ -1,3 +1,32 @@
 .ok{
     display:none;
+z-index: 100;
+position:absolute;
+}
+.blue-shape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    z-index: -1;
+    display: block;
+    width: 56vw;
+    height: 56vw;
+    border-radius: 6.6vw;
+    background-color: #eff8fd;
+    -webkit-transform: rotate(-23deg);
+    -ms-transform: rotate(-23deg);
+    transform: rotate(200deg);
+}
+.body{
+    color: #4c525a;
+  
+    }
+.blue-shape._11 {
+    left: auto;
+    top: -98%;
+    right: -20%;
+    width: 70vw;
+    height: 80vw;
 }

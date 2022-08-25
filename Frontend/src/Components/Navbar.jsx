@@ -83,7 +83,7 @@ export const Navbar = () => {
     }
     
     // console.log(typeof(dat))
-  });
+  },[]);
  
   return (
     <Box>
@@ -351,6 +351,7 @@ export const Navbar = () => {
            
               
                <ComponentModel  item={dat}/>
+
                 <Flex justifyContent="center" pt="10%" color="#00b289"m='auto' fontWeight={600}>See All Templates</Flex>
             </Box>
         </Box>

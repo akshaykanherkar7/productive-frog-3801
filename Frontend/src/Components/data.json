@@ -2,6 +2,7 @@
     [
         {
             "id":1,
+            "heading":"Featured Contract Templates",
             "a1":"Graphic Design Proposal Template",
             "a2":"Free Contract Maker",
             "a3":"Social Media Management Contract Template",
@@ -9,44 +10,50 @@
         },
         {
             "id":2,
-            "a1":"Influencer Collaboration Agreement Template",
+             "heading":"Featured Proposal Templates",
+            "a1":"Influencer Collaboration Agreement ",
             "a2":"Digital Marketing Contract Template",
             "a3":"Writer Agreement Template",
             "a4":"Graphic Design Proposal Template"
         },
         {
             "id":3,
+            "heading":"Featured Invoice Templates",
             "a1":"Digital Marketing Contract Template",
             "a2":"Writer Agreement Template",
             "a3":"Graphic Design Proposal Template",
-            "a4":"Influencer Collaboration Agreement Template"
+            "a4":"Influencer Collaboration Agreement "
         },
         {
             "id":4,
+             "heading":"Featured Agreement Templates",
             "a1":"Graphic Design Proposal Template",
-            "a2":"Influencer Collaboration Agreement Template",
-            "a3":"Interior Design Scope ofWork Template",
+            "a2":"Influencer Collaboration Agreement ",
+            "a3":"Interior Design Scope ofWork ",
             "a4":"Writer Agreement Template"
         },
         {
             "id":5,
-            "a1":"Interior Design Scope ofWork Template",
+             "heading":"Featured Quote Templates",
+            "a1":"Interior Design Scope ofWork ",
             "a2":"Graphic Design Proposal Template",
             "a3":"Digital Marketing Contract Template",
-            "a4":"Influencer Collaboration Agreement Template"
+            "a4":"Influencer Collaboration Agreement "
         },
         {
             "id":6,
+             "heading":"Featured Scope of word Templates",
             "a1":"Digital Marketing Contract Template",
             "a2":"Writer Agreement Template",
             "a3":"Graphic Design Proposal Template",
-            "a4":"Influencer Collaboration Agreement Template"
+            "a4":"Influencer Collaboration Agreement "
         },
         {
             "id":7,
-            "a1":"Interior Design Scope ofWork Template",
+             "heading":"Featured Invoice Templates",
+            "a1":"Interior Design Scope ofWork ",
             "a2":"Graphic Design Proposal Template",
             "a3":"Digital Marketing Contract Template",
-            "a4":"Influencer Collaboration Agreement Template"
+            "a4":"Influencer Collaboration Agreement "
         }
     ]

@@ -7,7 +7,7 @@ import data from "./data.json"
 import { ComponentModel } from "./ComponentModel";
 export const Navbar = () => {
   const [dat,setDat]=useState([data[0]])
-
+  // setDat(data[0])
   // console.log(data) 
   useEffect(() => {
     
@@ -81,7 +81,7 @@ export const Navbar = () => {
         toggleProductUpOff(fourth);
       })
     }
-    // setDat(data[0])
+    
     // console.log(typeof(dat))
   });
  

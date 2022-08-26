@@ -78,7 +78,7 @@ export default function Pricing() {
         py={10}>
 
 
-         <PriceWrapper>
+         <PriceWrapper bg={"white"}>
           <Box py={2} px={12}  textAlign={"left"}>
             <Text fontWeight="500" fontSize="1.5rem" >
             Starter
@@ -140,8 +140,8 @@ export default function Pricing() {
               </ListItem>
               
             </List>
-            <Box w="80%" pt={7}>
-              <Button w="full" color={'#fff'} variant="outline" bg={"#00B289"}>
+            <Box w="80%" pt={7} paddingTop={"100px"} >
+              <Button w="full" color={'#fff'} variant="outline" bg={"#00B289"} >
                 Start trial
               </Button>
             </Box>
@@ -210,7 +210,7 @@ export default function Pricing() {
               </ListItem>
               
             </List>
-            <Box w="80%" pt={7} >
+            <Box w="80%" pt={7} paddingTop={"100px"} >
               <Button  w="full" color={'#fff'} variant="outline" bg={"#00B289"}>
                 Start trial
               </Button>

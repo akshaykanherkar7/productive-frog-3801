@@ -12,22 +12,23 @@ import { BiTask, BiGift } from "react-icons/bi";
 import { BsWallet } from "react-icons/bs";
 import { TbReceiptTax } from "react-icons/tb";
 import { ImFileText2 } from "react-icons/im";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 export const DashSidebar = () => {
   return (
-    <Box>
+    <Box w="15%" h="100%" position="fixed" borderRight="1px solid grey">
       <Box >
-        <Flex >
-          <Box>
+        <Flex  mt="5%" p="5% 10% 5% 10% " justifyContent="space-between">
+          <Box m='auto'>
             <Image
               src="https://app.hellobonsai.com/packs/static/bonsai-623ed86a47a195e7f9e2.svg"
               alt=""
               width="110px"
             />
           </Box>
-          <Box>
-            <BsPlusSquare className="dsgn" />
+          <Box  border='1px' borderColor='#00b289' textallign='center' mb='1%' p='5%' >
+          
+            <AiOutlinePlus   color="#00b289" />
           </Box>
         </Flex>
         <Box >
@@ -58,7 +59,8 @@ export const DashSidebar = () => {
             </Box></Flex>
           </Box>
           <Box>
-            <Box className="icons">
+           <Flex>
+           <Box className="icons">
               <GrDocumentText />
             </Box>
             <Box className="psize">
@@ -66,8 +68,10 @@ export const DashSidebar = () => {
                 <Link to="Freetrial">Proposls</Link>
               </p>
             </Box>
+           </Flex>
 
-            <Box className="icons">
+          <Flex>
+          <Box className="icons">
               <IoNewspaperOutline />
             </Box>
             <Box className="psize">
@@ -75,6 +79,7 @@ export const DashSidebar = () => {
                 <Link to="Freetrial">Contracts</Link>
               </p>
             </Box>
+          </Flex>
 
             <Box className="icons">
               <TbFileDollar />

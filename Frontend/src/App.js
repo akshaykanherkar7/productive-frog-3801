@@ -12,7 +12,7 @@ function App() {
       {/* <Trialbox/> */}
       {/* <MainRoutes></MainRoutes> */}
       {/* <Homepage1/> */}
-    {/* <DashSidebar/> */}
+      <DashSidebar/>
       {/* <Noinvoicebox/> */}
       {/* <Invoiceedit/> */}
     </div>

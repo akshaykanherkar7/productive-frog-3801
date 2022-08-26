@@ -10,9 +10,9 @@ function App() {
   return (
     <div>
       {/* <Trialbox/> */}
-      {/* <MainRoutes></MainRoutes> */}
+      <MainRoutes></MainRoutes>
       {/* <Homepage1/> */}
-      <DashSidebar/>
+      {/* <DashSidebar/> */}
       {/* <Noinvoicebox/> */}
       {/* <Invoiceedit/> */}
     </div>

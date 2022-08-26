@@ -17,125 +17,230 @@ import { Link } from "react-router-dom";
 export const DashSidebar = () => {
   return (
     <Box w="15%" h="100%" position="fixed" borderRight="1px solid grey">
-      <Box >
-      <Flex  mt="5%" p="5% 10% 5% 10% " justifyContent="space-between">
-          <Box m='auto'>
+      <Box>
+        <Flex mt="5%" p="7% 12% 7% 12% " justifyContent="space-between">
+          <Box m="auto"  _hover={{
+                cursor: "pointer",
+              }}>
             <Image
               src="https://app.hellobonsai.com/packs/static/bonsai-623ed86a47a195e7f9e2.svg"
               alt=""
               width="110px"
             />
           </Box>
-          <Box  border='1px' borderColor='#00b289' textallign='center' mb='1%' p='5%' >
-          
-            <AiOutlinePlus   color="#00b289" />
+          <Box
+           _hover={{
+            cursor: "pointer",
+          }}
+            border="1px"
+            borderColor="#00b289"
+            textallign="center"
+            mb="1%"
+            borderRadius={"3px"}
+            p="5%"
+          >
+            <AiOutlinePlus color="#00b289" />
           </Box>
         </Flex>
-        <Box >
-          <Box>
-         <Flex>   <Box className="icons">
-              <FiHome />
-            </Box>
-            <Box className="psize">
-              <p>Dashboard</p>
-            </Box></Flex>
+        <Box opacity=".8" >
+          <Box pb="15%" m="auto" opacity=".8">
+            <Flex pb="5%"  _hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <FiHome />
+                </Box>
+                &nbsp; Dashboard
+              </Flex>
+            </Flex>
 
-          <Flex>  <Box className="icons">
-              <IoIosContacts />
-            </Box>
-            <Box className="psize">
-              <p>
-                <Link to="Freetrial">Clients</Link>
-              </p>
-            </Box></Flex>
+            <Flex pb="5%" _hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                {" "}
+                <Box m="auto">
+                  <IoIosContacts />
+                </Box>
+                <Box>
+                  <p>
+                    <Link to="Freetrial">&nbsp;Clients</Link>
+                  </p>
+                </Box>
+              </Flex>
+            </Flex>
 
-          <Flex>  <Box className="icons">
-              <VscFileSubmodule />
-            </Box>
-            <Box className="psize">
-              <p>
-                <Link to="Freetrial">Projects</Link>
-              </p>
-            </Box></Flex>
+            <Flex pb="5%" _hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <VscFileSubmodule />
+                </Box>
+                &nbsp;Projects
+              </Flex>
+            </Flex>
           </Box>
-          <Box>
-            <Box className="icons">
-              <GrDocumentText />
-            </Box>
-            <Box className="psize">
-              <p>
-                <Link to="Freetrial">Proposls</Link>
-              </p>
-            </Box>
+          <Box pb="15%" opacity=".8">
+            <Flex pb="5%"_hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <GrDocumentText />
+                </Box>
+                &nbsp;Proposls
+              </Flex>
+            </Flex>
 
-            <Box className="icons">
-              <IoNewspaperOutline />
-            </Box>
-            <Box className="psize">
-              <p>
-                <Link to="Freetrial">Contracts</Link>
-              </p>
-            </Box>
+            <Flex pb="5%"_hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <IoNewspaperOutline />
+                </Box>
+                &nbsp;Contracts
+              </Flex>
+            </Flex>
 
-            <Box className="icons">
-              <TbFileDollar />
-            </Box>
-            <Box className="psize">
-              <p>
-                <Link to="Freetrial">Invoices</Link>
-              </p>
-            </Box>
+            <Flex pb="5%"_hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <TbFileDollar />
+                </Box>
+                &nbsp;Invoices
+              </Flex>
+            </Flex>
           </Box>
-          <Box>
-            <Box className="icons">
-              <MdOutlineWatchLater />
-            </Box>
-            <Box className="psize">
-              <p>
-                <Link to="Freetrial">Time Tracking</Link>
-              </p>
-            </Box>
+          <Box pb="15%" opacity=".8">
+            <Flex pb="5%"_hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <MdOutlineWatchLater />
+                </Box>
+                &nbsp;Time Tracking
+              </Flex>
+            </Flex>
 
-            <a href="/Tasks">
-              <Box className="icons">
-                <BiTask />
+            <Flex pb="5%"_hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <BiTask />
+                </Box>
+                &nbsp;Tasks
+              </Flex>
+            </Flex>
+          </Box>
+          <Box pb="15%" opacity=".8">
+            <Flex pb="5%"_hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <BsWallet />
+                </Box>
+                &nbsp;cash
+              </Flex>
+            </Flex>
+
+            <Flex pb="5%"_hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <ImFileText2 />
+                </Box>
+                &nbsp;Accounting
+              </Flex>
+            </Flex>
+
+            <Flex pb="5%"_hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500"
+              }}>
+              <Flex m="auto" p="auto">
+                <Box></Box>
+                <Box m="auto">
+                  <TbReceiptTax />
+                </Box>
+                &nbsp;Taxes
+              </Flex>
+            </Flex>
+          </Box>
+
+          <Flex pb="5%" m="auto" pt="5%" color="#00b289" bg="#f2fbf9">
+            <Flex
+              m="auto"
+              border="1px"
+              borderColor="#00b289"
+              borderRadius="5px"
+              p="2%"
+              _hover={{
+                cursor: "pointer",
+               
+                fontWeight:"500"
+              }}
+            >
+              <Box></Box>
+              <Box m="auto">
+                <BiGift />
               </Box>
-              <Box className="psize">
-                <p>
-                  <Link to="tasks">Tasks</Link>
-                </p>
+              &nbsp;Get One Month Free
+            </Flex>
+          </Flex>
+
+          <Flex pb="5%" mt="100px" opacity=".8" _hover={{
+                cursor: "pointer",
+                color:"black",
+                fontWeight:"500",
+                backgroundColor:"lightgrey"
+              }}>
+            <Flex m="auto" p="auto">
+              <Box></Box>
+              <Box m="auto">
+                <AiOutlineStar />
               </Box>
-            </a>
-          </Box>
-          <Box>
-            <Box className="icons">
-              <BsWallet />
-            </Box>
-            <Box className="psize">
-              <Link to="Freetrial">cash</Link>
-            </Box>
-
-            <Box className="icons">
-              <ImFileText2 />
-            </Box>
-            <Box className="psize">
-              <Link to="Freetrial">Accounting</Link>
-            </Box>
-
-            <Box className="icons">
-              <TbReceiptTax />
-            </Box>
-            <Box className="psize">
-              <Link to="Freetrial">Taxes</Link>
-            </Box>
-          </Box>
-          <button id="gift">
-            <BiGift /> <span>Get One Month Free</span>
-          </button>
-          <Box className="last">
-            <AiOutlineStar />
-            <span className="star">Upgrade Your plan</span>
-          </Box>
+              &nbsp;Upgrade Your plan
+            </Flex>
+          </Flex>
         </Box>
       </Box>
     </Box>

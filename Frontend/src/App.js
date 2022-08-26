@@ -7,9 +7,9 @@ import Trialbox from "./Components/Bharat/trialbox";
 function App() {
   return (
     <div>
-      <Trialbox/>
-      {/* <MainRoutes></MainRoutes> */}
-      <Noinvoicebox/>
+      {/* <Trialbox/> */}
+      <MainRoutes></MainRoutes>
+      {/* <Noinvoicebox/> */}
       {/* <Invoiceedit/> */}
     </div>
   );

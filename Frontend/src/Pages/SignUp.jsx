@@ -22,7 +22,7 @@ import {
 
     const [email, setEmail] = useState("");
     const [pass,setPass] = useState("");
-    const [fullname,setFullname] = useState("")
+    const [fullname,setFullname] = useState("");
 
     const handelSubmit = async () => {
         const data = {email,pass,fullname}
@@ -32,7 +32,6 @@ import {
             body : JSON.stringify(data),
             headers : { "Content-Type" : "application/json"}
         })
-
     }
   
     return (

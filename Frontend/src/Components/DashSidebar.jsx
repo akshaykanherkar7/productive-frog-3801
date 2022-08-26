@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image, Spacer } from "@chakra-ui/react";
 import { FiHome } from "react-icons/fi";
 import { BsPlusSquare } from "react-icons/bs";
 import { IoIosContacts } from "react-icons/io";
@@ -16,12 +16,15 @@ import { AiOutlinePlus, AiOutlineStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 export const DashSidebar = () => {
   return (
-    <Box w="15%" h="100%" position="fixed" borderRight="1px solid grey">
+    <Box w="15%" h="100%" position="fixed" fontSize="15px" borderRight="1px solid grey">
       <Box>
-        <Flex mt="5%" p="7% 12% 7% 12% " justifyContent="space-between">
-          <Box m="auto"  _hover={{
-                cursor: "pointer",
-              }}>
+        <Flex mt="5%" p="5% 20% 7% 0% " justifyContent="space-between">
+          <Box
+            m="auto"
+            _hover={{
+              cursor: "pointer",
+            }}
+          >
             <Image
               src="https://app.hellobonsai.com/packs/static/bonsai-623ed86a47a195e7f9e2.svg"
               alt=""
@@ -29,9 +32,9 @@ export const DashSidebar = () => {
             />
           </Box>
           <Box
-           _hover={{
-            cursor: "pointer",
-          }}
+            _hover={{
+              cursor: "pointer",
+            }}
             border="1px"
             borderColor="#00b289"
             textallign="center"
@@ -41,29 +44,50 @@ export const DashSidebar = () => {
           >
             <AiOutlinePlus color="#00b289" />
           </Box>
+          
         </Flex>
-        <Box opacity=".8" >
-          <Box pb="15%" m="auto" opacity=".8">
-            <Flex pb="5%"  _hover={{
+        <Box opacity=".9">
+          <Box
+            pb="5%"
+            display="flex"
+           
+            pl="7%"
+            flexDirection="column"
+            
+            textAlign="left"
+           
+            opacity=".8,5"
+          >
+            <Flex
+            justifyContent="flex-start"
+            
+             
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
-              <Flex m="auto" p="auto">
-                <Box></Box>
-                <Box m="auto">
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
+              <Flex m="auto" p="auto"   >
+              
+                <Box m="auto" >
                   <FiHome />
                 </Box>
                 &nbsp; Dashboard
               </Flex>
+              <Spacer />
             </Flex>
 
-            <Flex pb="5%" _hover={{
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
-              <Flex m="auto" p="auto">
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
+              <Flex m="auto" p="auto"  >
                 {" "}
                 <Box m="auto">
                   <IoIosContacts />
@@ -74,13 +98,17 @@ export const DashSidebar = () => {
                   </p>
                 </Box>
               </Flex>
+               <Spacer />
             </Flex>
 
-            <Flex pb="5%" _hover={{
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -88,14 +116,19 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Projects
               </Flex>
+               <Spacer />
             </Flex>
           </Box>
-          <Box pb="15%" opacity=".8">
-            <Flex pb="5%"_hover={{
+          <Box pb="5%"
+            pl="7%" opacity=".9">
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -103,13 +136,17 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Proposls
               </Flex>
+               <Spacer />
             </Flex>
 
-            <Flex pb="5%"_hover={{
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -117,13 +154,17 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Contracts
               </Flex>
+               <Spacer />
             </Flex>
 
-            <Flex pb="5%"_hover={{
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -131,14 +172,19 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Invoices
               </Flex>
+               <Spacer />
             </Flex>
           </Box>
-          <Box pb="15%" opacity=".8">
-            <Flex pb="5%"_hover={{
+          <Box pb="5%"
+            pl="7%" opacity=".9">
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -146,13 +192,17 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Time Tracking
               </Flex>
+               <Spacer />
             </Flex>
 
-            <Flex pb="5%"_hover={{
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -160,14 +210,19 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Tasks
               </Flex>
+               <Spacer />
             </Flex>
           </Box>
-          <Box pb="15%" opacity=".8">
-            <Flex pb="5%"_hover={{
+          <Box pb="5%"
+            pl="7%" opacity=".9">
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -175,13 +230,17 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;cash
               </Flex>
+               <Spacer />
             </Flex>
 
-            <Flex pb="5%"_hover={{
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -189,13 +248,17 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Accounting
               </Flex>
+               <Spacer />
             </Flex>
 
-            <Flex pb="5%"_hover={{
+            <Flex
+              pb="5%"
+              _hover={{
                 cursor: "pointer",
-                color:"black",
-                fontWeight:"500"
-              }}>
+                color: "black",
+                fontWeight: "500",
+              }}
+            >
               <Flex m="auto" p="auto">
                 <Box></Box>
                 <Box m="auto">
@@ -203,6 +266,7 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Taxes
               </Flex>
+               <Spacer />
             </Flex>
           </Box>
 
@@ -215,8 +279,8 @@ export const DashSidebar = () => {
               p="2%"
               _hover={{
                 cursor: "pointer",
-               
-                fontWeight:"500"
+
+                fontWeight: "500",
               }}
             >
               <Box></Box>
@@ -227,12 +291,19 @@ export const DashSidebar = () => {
             </Flex>
           </Flex>
 
-          <Flex pb="5%" mt="100px" opacity=".8" _hover={{
-                cursor: "pointer",
-                color:"black",
-                fontWeight:"500",
-                backgroundColor:"lightgrey"
-              }}>
+          <Flex
+            pb="5%"
+            mt="180px"
+            opacity=".8,5"
+           borderTop='1px solid grey'
+              pt='10%'
+            _hover={{
+              cursor: "pointer",
+              color: "black",
+              fontWeight: "500",
+           
+            }}
+          >
             <Flex m="auto" p="auto">
               <Box></Box>
               <Box m="auto">

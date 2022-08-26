@@ -1,0 +1,27 @@
+.buttons_box{
+   margin-left: 230px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 80%;
+
+}
+.table{
+margin-left: 230px;
+width: 80%;
+margin-top: 50px;
+}
+.triangles{
+    display: flex;
+    flex-direction: column;
+    width: 3px;
+    margin-left: 10px;
+    height: 10px;
+    border: 1px solid black;
+}
+.table_head{
+color: gray;
+}
+.table_row{
+border: 1px solid lightgray; 
+}

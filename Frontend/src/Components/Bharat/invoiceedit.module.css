@@ -18,3 +18,32 @@ gap: 8%;
     height: 1000px;
     padding: 10px 0px;
 }
+.invoiceNum{
+    display: flex;
+    padding-left: 0;
+}
+.editbox_top{
+    display: flex;  
+    justify-content: space-between;  
+}
+.profile{
+  margin: auto;
+  width: 100%;
+}
+.profile_image{
+    width: 20%;
+    height: 20%;
+margin: auto;
+margin-top: 30px;
+border: 03px solid lightgray;
+padding: 5px 5px;
+background: rgba(255, 255, 255, 0.8);
+}
+.profile_text{
+   text-align: center;
+    align-self: center;
+    margin: 30px 0px;
+    font-size: 22px;
+    font-weight: 600;
+   
+}

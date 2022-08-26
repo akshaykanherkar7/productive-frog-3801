@@ -18,7 +18,9 @@ export const DashSidebar = () => {
   return (
     <Box w="15%" h="100%" position="fixed" borderRight="1px solid grey">
       <Box >
+
       <Flex  mt="5%" p="5% 10% 5% 10% " justifyContent="space-between">
+
           <Box m='auto'>
             <Image
               src="https://app.hellobonsai.com/packs/static/bonsai-623ed86a47a195e7f9e2.svg"
@@ -59,7 +61,8 @@ export const DashSidebar = () => {
             </Box></Flex>
           </Box>
           <Box>
-            <Box className="icons">
+           <Flex>
+           <Box className="icons">
               <GrDocumentText />
             </Box>
             <Box className="psize">
@@ -67,8 +70,10 @@ export const DashSidebar = () => {
                 <Link to="Freetrial">Proposls</Link>
               </p>
             </Box>
+           </Flex>
 
-            <Box className="icons">
+          <Flex>
+          <Box className="icons">
               <IoNewspaperOutline />
             </Box>
             <Box className="psize">
@@ -76,6 +81,7 @@ export const DashSidebar = () => {
                 <Link to="Freetrial">Contracts</Link>
               </p>
             </Box>
+          </Flex>
 
             <Box className="icons">
               <TbFileDollar />

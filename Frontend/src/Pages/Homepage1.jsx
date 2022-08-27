@@ -107,9 +107,9 @@ const Homepage1 = () => {
     setForms(true);
   };
   return (
-    <Box>
-      <Navbar overflow="hidden" />
-      <Box>
+    <Box >
+      <Navbar />
+      <Box className="blue-box ">
       <Box className="blue-shape _11"></Box>
       </Box>
     

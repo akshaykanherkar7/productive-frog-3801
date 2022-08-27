@@ -24,11 +24,11 @@ position:absolute;
 }
 
 
-.body{
+body{
     color: #4c525a;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  
+   
+    overflow-x:hidden;
     }
 .blue-shape._11 {
     left: auto;
@@ -64,10 +64,15 @@ position:absolute;
   
     
 }
+.blue-box{
+    box-sizing: border-box;
+     overflow: hidden;
+}
 .nav{
         position: sticky;
     left: 0;
     top: 0;
+    width:100%;
     right: 0;
     bottom: auto;
     z-index: 100000000;

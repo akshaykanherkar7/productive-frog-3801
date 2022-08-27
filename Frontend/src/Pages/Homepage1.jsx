@@ -118,17 +118,15 @@ const Homepage1 = () => {
     <Box>
       <Navbar />
       <Box className="blue-box ">
-        <Box className="blue-shape _11"></Box>
+        <Box className="blue-shape _11" display={{ base:"none"}}></Box>
       </Box>
 
-      <Wrap>
-        <WrapItem></WrapItem>
-        <WrapItem></WrapItem>
-      </Wrap>
-      <Flex>
-        <Box w="50%">
-          <Box mt="22%" ml="22%">
-            <Box fontSize={45}>
+      
+
+        <Wrap m="auto" justify="center" w="100%" spacing="5%">
+          <WrapItem m="auto" pl="5%"  opacity=".85"> 
+          <Box mt="22%" >
+            <Box fontSize={40} pb="2%">
               Everything you need to
               <br /> run your business.
             </Box>
@@ -138,7 +136,7 @@ const Homepage1 = () => {
               your paperwork.
             </Box>
 
-            <InputGroup w="80%" h="4rem" mt="5%" p="auto" borderRadius={"5px"}>
+            <InputGroup  w="100%" h="4rem" mt="5%" p="auto" borderRadius={"5px"}>
               <Input
                 h="3.9rem"
                 m="auto"
@@ -165,11 +163,14 @@ const Homepage1 = () => {
               </Button>
             </InputGroup>
           </Box>
-        </Box>
-        <Box w="50%">
-          <Image src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/60dc499268d597166db997aa_bonsai_hero-opt-2.png"></Image>
-        </Box>
-      </Flex>
+        </WrapItem  >
+          <WrapItem m="auto"  pt="5%" >
+          <Image  w={[300, 400, 700]} h={[300, 400, 600]} src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/60dc499268d597166db997aa_bonsai_hero-opt-2.png"></Image>
+       </WrapItem>
+        </Wrap>
+       
+       
+    
 
       <Box>
         <Image

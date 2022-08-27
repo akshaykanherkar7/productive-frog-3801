@@ -149,9 +149,9 @@ useEffect(() =>{
             onClick={isOpen ? onClose : onOpen}
           />
            {isOpen ? (
-          <Box  mt="70px"  boxShadow="md" display={{ md: 'none' }}>
-            <Stack as={'nav'} pl="100%" pt="15%" pb="25%" justify={"center"} opacity={".9"} boxShadow="md" ml="-100%" fontSize={"1.5rem"} w="100000000%" bg="white" spacing={4}>
-            <Box>
+          <Box  mt="70px" w="100%" boxShadow="md" display={{ md: 'none' }}>
+            <Stack   pt="15%" pb="25%" pl="130%" justify="center" opacity={".9"} boxShadow="md" ml="-100%" fontSize={"1.5rem"} w="350%" bg="white" spacing={4}>
+            <Box justify="center" >
                 Product <i class="fa-solid fa-caret-down"></i>
               </Box>
               <Box>
@@ -177,7 +177,7 @@ useEffect(() =>{
           <Spacer   display={{ md: 'none' }}/>
           <Spacer   display={{ md: 'none' }}/>
           <Spacer   display={{ md: 'none' }}/>
-          <Box m="auto"  display={{  md: 'flex' }}>
+          <Box m="auto"  display={{ base:"none", md: 'flex' }}>
             <Image
               p="5%" mb="7%"
               w="75%"
@@ -185,7 +185,14 @@ useEffect(() =>{
               alt="Logo"
             />
           </Box>
-
+          <Flex m="auto"p="auto" justify="end"   display={{  base:"flex", md: 'none'}}>
+            <Image
+              p="5%" 
+              w="55%"
+              src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7cd432feb68e_bonsai-logo.svg"
+              alt="Logo"
+            />
+          </Flex>
           <Flex
             color="grey"
             display={{ base: 'none', md: 'flex' }}

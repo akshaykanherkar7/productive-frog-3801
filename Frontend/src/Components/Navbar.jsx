@@ -4,8 +4,12 @@ import {
   Button,
   Flex,
   Heading,
+  IconButton,
   Image,
+  Spacer,
+  Stack,
   Tr,
+  useDisclosure,
   useWhyDidYouUpdate,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
@@ -13,6 +17,7 @@ import { useEffect } from "react";
 import "./Navbar.css";
 import data from "./data.json";
 import { ComponentModel } from "./ComponentModel";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 export const Navbar = () => {
   const [dat, setDat] = useState([{}]);
   // setDat(data[0])
@@ -115,6 +120,7 @@ export const Navbar = () => {
 
     // console.log(typeof(dat))
   }, []);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 // console.log(data[0])
 useEffect(() =>{
   setDat(data[0])
@@ -122,7 +128,8 @@ useEffect(() =>{
   return (
     <Box className="nav"> 
       <Box boxShadow="md" rounded="md" bg="white">
-        <Box
+        <Box 
+        //  display={{ base: 'none', md: 'flex' }}
           pl="10%"
           pt="1%"
           pr="10%"
@@ -132,22 +139,61 @@ useEffect(() =>{
           gap="5%"
           h="70px"
         >
-          <Box>
+           <IconButton
+           m="auto"
+
+            size={'md'}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={'Open Menu'}
+            display={{ md: 'none' }}
+            onClick={isOpen ? onClose : onOpen}
+          />
+           {isOpen ? (
+          <Box  mt="70px"  boxShadow="md" display={{ md: 'none' }}>
+            <Stack as={'nav'} pl="100%" pt="15%" pb="25%" justify={"center"} opacity={".9"} boxShadow="md" ml="-100%" fontSize={"1.5rem"} w="100000000%" bg="white" spacing={4}>
+            <Box>
+                Product <i class="fa-solid fa-caret-down"></i>
+              </Box>
+              <Box>
+                Templates <i class="fa-solid fa-caret-down"></i>
+              </Box>
+              <Box
+              _hover={{
+                cursor: "pointer",
+              }}
+            >
+              Pricing
+            </Box>
+            <Box
+              _hover={{
+                cursor: "pointer",
+              }}
+            >
+              Reviews
+            </Box>
+            </Stack>
+          </Box>
+        ) : null}
+          <Spacer   display={{ md: 'none' }}/>
+          <Spacer   display={{ md: 'none' }}/>
+          <Spacer   display={{ md: 'none' }}/>
+          <Box m="auto"  display={{  md: 'flex' }}>
             <Image
-              p="5%"
+              p="5%" mb="7%"
               w="75%"
               src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7cd432feb68e_bonsai-logo.svg"
               alt="Logo"
             />
           </Box>
 
-          <Box
+          <Flex
             color="grey"
+            display={{ base: 'none', md: 'flex' }}
             justifyContent="center"
             w="60%"
             gap="10%"
             mt="0.5%"
-            display="flex"
+            // display="flex"
           >
             <Box
               display="flex"
@@ -189,9 +235,9 @@ useEffect(() =>{
             >
               Reviews
             </Box>
-          </Box>
+          </Flex>
 
-          <Box position="relative" display="flex" w="20%">
+          <Box position="relative"display={{ base: 'none', md: 'flex' }}  w="20%">
             <Button
               colorScheme="white"
               color="#00b289"

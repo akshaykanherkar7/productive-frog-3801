@@ -57,6 +57,18 @@ export default function SimpleCard() {
     });
   };
 
+  // const handleClick = async () => {
+  //     const data = {
+  //         email,
+  //         password
+  //     }
+  //    await fetch("http://localhost:8080/user/login", {
+  //         method : "POST",
+  //         body : JSON.stringify(data),
+  //         headers : {"Content-Type" : "application/json"}
+  //     }).then((res) => res.json()).then((res) => localStorage.setItem("token", res.token)).catch((err) => console.log(err))
+  // }
+
   return (
     <Flex
       minH={"100vh"}
@@ -177,4 +189,3 @@ export default function SimpleCard() {
     </Flex>
   );
 }
-

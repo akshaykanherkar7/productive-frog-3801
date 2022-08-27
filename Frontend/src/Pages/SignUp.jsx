@@ -22,8 +22,6 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import { registerAPI } from "../Redux/Auth/auth.action";
 import { useNavigate } from "react-router-dom";
-import "./Singup.css"
-  
 
 export default function SignupCard() {
   const [showPassword, setShowPassword] = useState(false);
@@ -33,6 +31,7 @@ export default function SignupCard() {
   const [fullname, setFullname] = useState("");
   const [country, setCountry] = useState("");
   const [currency, setCurrency] = useState("");
+
   const toast = useToast()
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -56,40 +55,59 @@ export default function SignupCard() {
     navigate("/login")
   };
 
-    return (
-      <Flex
-        minH={'100vh'}
-        align={'center'}
-        justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')}>
-        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-          <Stack align={'center'}>
-           
-            <Heading color="blackAlpha.900" fontFamily="sans-serif" fontWeight="600" as='h4' size='lg'>
+  // const handelSubmit = async () => {
+  //     // const data = {email,pass,fullname}
+
+  //     // await fetch("#", {
+  //     //     method : "POST",
+  //     //     body : JSON.stringify(data),
+  //     //     headers : { "Content-Type" : "application/json"}
+  //     // })
+
+  // }
+
+  return (
+    <Flex
+      minH={"100vh"}
+      align={"center"}
+      justify={"center"}
+      bg={useColorModeValue("gray.50", "gray.800")}
+    >
+      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+        <Stack align={"center"}>
+          <Heading fontFamily="sans-serif" fontWeight="600" as="h4" size="lg">
             Try Bonsai free with your Workflow today
-  </Heading>
-  <br/>
-  <Heading  color="blackAlpha.900" fontSize={'4xl'} textAlign={'center'}>
-              Sign up  
-            </Heading>
-            {/* <Text fontSize={'lg'} color={'gray.600'}>
+          </Heading>
+          <br />
+          <Heading fontSize={"4xl"} textAlign={"center"}>
+            Sign up
+          </Heading>
+          {/* <Text fontSize={'lg'} color={'gray.600'}>
               to enjoy all of our cool features ✌️
             </Text> */}
-          </Stack>
-          <Box
-            rounded={'lg'}
-            bg={useColorModeValue('white', 'gray.700')}
-            boxShadow={'lg'}
-            p={8}>
-            <Stack spacing={4}>
-              <HStack>
-                <Box>
-                  <FormControl id="firstName" isRequired>
-                    <FormLabel color="grey.800">Full Name</FormLabel>
-                    <Input style={{"width" : "180%"}} type="text" value={fullname} onChange={(e) => {setFullname(e.target.value)}}/>
-                  </FormControl>
-                </Box>
-                {/* <Box>
+        </Stack>
+        <Box
+          rounded={"lg"}
+          bg={useColorModeValue("white", "gray.700")}
+          boxShadow={"lg"}
+          p={8}
+        >
+          <Stack spacing={4}>
+            <HStack>
+              <Box>
+                <FormControl id="firstName" isRequired>
+                  <FormLabel color="grey">Full Name</FormLabel>
+                  <Input
+                    style={{ width: "180%" }}
+                    type="text"
+                    value={fullname}
+                    onChange={(e) => {
+                      setFullname(e.target.value);
+                    }}
+                  />
+                </FormControl>
+              </Box>
+              {/* <Box>
                   <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
                     <Input type="text" />
@@ -127,33 +145,6 @@ export default function SignupCard() {
                   </Button>
                 </InputRightElement>
               </InputGroup>
-              </HStack>
-              <FormControl id="email" isRequired>
-                <FormLabel color="grey.800">Email address</FormLabel>
-                <Input type="email" value={email} onChange={(e) => {setEmail(e.target.value)}} />
-              </FormControl>
-              <FormControl  id="password" isRequired>
-                <FormLabel color="grey.800">Password</FormLabel>
-                <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} value={pass} onChange={(e) => {setPass(e.target.value)}} />
-                  <InputRightElement h={'full'}>
-                    <Button
-                      variant={'ghost'}
-                      onClick={() =>
-                        setShowPassword((showPassword) => !showPassword)
-                      }>
-                      {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                    </Button>
-                  </InputRightElement>
-                </InputGroup>
-
-                <br/>
-
-<Flex>
-  <Text style={{"fontWeight" : "600", "color" : "grey.800"}}>COUNTRY</Text>
-  <Spacer/>
-  <Text style={{"marginRight" : "28%","fontWeight" : "600","color" : "grey.800"}}>CURRENCY</Text>
-</Flex>
 
               <br />
 

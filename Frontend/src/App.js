@@ -8,7 +8,7 @@ import Project from "./Pages/Project";
 function App() {
   return (
     <div>
-   <Invoice/>
+
     </div>
   );
 }

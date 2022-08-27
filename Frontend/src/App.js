@@ -11,9 +11,9 @@ function App() {
     <div>
       {/* <Trialbox/> */}
       {/* <MainRoutes></MainRoutes> */}
-      {/* <Homepage1/> */}
+      <Homepage1/>
 
-    <DashSidebar/>
+    {/* <DashSidebar/> */}
 
  
       {/* <Noinvoicebox/> */}

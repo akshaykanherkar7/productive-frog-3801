@@ -121,7 +121,7 @@ useEffect(() =>{
 },[])
   return (
     <Box>
-      <Box boxShadow="md" rounded="md" bg="white">
+      <Box boxShadow="md" rounded="md" bg="white" position='sticky'>
         <Box
           pl="10%"
           pt="1%"

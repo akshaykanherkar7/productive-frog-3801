@@ -51,7 +51,7 @@
 }
 
 .filter_box_parent {
-    margin-left: 230px;
+    margin-left: 70px;
     width: 85%;
     background: rgba(0, 0, 0, 0.02);
     z-index: 10;
@@ -85,4 +85,14 @@
 .left_buttons{
     display: flex;
     gap:10px
+}
+.filter_select {
+    margin-top: 10px;
+}
+
+.select_name {
+    margin-right: 10px;
+    color: #878787;
+    margin-left: 50px;
+    margin-top: 20px;
 }

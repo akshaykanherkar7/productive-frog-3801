@@ -18,6 +18,8 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+
+  import "./Singup.css"
   
   
   export default function SignupCard() {
@@ -47,11 +49,11 @@ import {
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
            
-            <Heading fontFamily="sans-serif" fontWeight="600" as='h4' size='lg'>
+            <Heading color="blackAlpha.900" fontFamily="sans-serif" fontWeight="600" as='h4' size='lg'>
             Try Bonsai free with your Workflow today
   </Heading>
   <br/>
-  <Heading  fontSize={'4xl'} textAlign={'center'}>
+  <Heading  color="blackAlpha.900" fontSize={'4xl'} textAlign={'center'}>
               Sign up  
             </Heading>
             {/* <Text fontSize={'lg'} color={'gray.600'}>
@@ -67,7 +69,7 @@ import {
               <HStack>
                 <Box>
                   <FormControl id="firstName" isRequired>
-                    <FormLabel color="grey">Full Name</FormLabel>
+                    <FormLabel color="grey.800">Full Name</FormLabel>
                     <Input style={{"width" : "180%"}} type="text" value={fullname} onChange={(e) => {setFullname(e.target.value)}}/>
                   </FormControl>
                 </Box>
@@ -79,11 +81,11 @@ import {
                 </Box> */}
               </HStack>
               <FormControl id="email" isRequired>
-                <FormLabel color="grey">Email address</FormLabel>
+                <FormLabel color="grey.800">Email address</FormLabel>
                 <Input type="email" value={email} onChange={(e) => {setEmail(e.target.value)}} />
               </FormControl>
               <FormControl  id="password" isRequired>
-                <FormLabel color="grey">Password</FormLabel>
+                <FormLabel color="grey.800">Password</FormLabel>
                 <InputGroup>
                   <Input type={showPassword ? 'text' : 'password'} value={pass} onChange={(e) => {setPass(e.target.value)}} />
                   <InputRightElement h={'full'}>
@@ -100,9 +102,9 @@ import {
                 <br/>
 
 <Flex>
-  <Text style={{"fontWeight" : "600", "color" : "grey"}}>COUNTRY</Text>
+  <Text style={{"fontWeight" : "600", "color" : "grey.800"}}>COUNTRY</Text>
   <Spacer/>
-  <Text style={{"marginRight" : "28%","fontWeight" : "600","color" : "grey"}}>CURRENCY</Text>
+  <Text style={{"marginRight" : "28%","fontWeight" : "600","color" : "grey.800"}}>CURRENCY</Text>
 </Flex>
 
 <Flex marginTop="15px">
@@ -527,7 +529,7 @@ import {
 </Flex>
 
               </FormControl>
-              <Link color="grey" style={{"fontWeight":"lighter"}} href='https://app.hellobonsai.com/terms'>Terms and conditions</Link>
+              <Link color="grey.800" style={{"fontWeight":"lighter"}} href='https://app.hellobonsai.com/terms'>Terms and conditions</Link>
               <Stack spacing={10} pt={2}>
                 <Button
                   loadingText="Submitting"

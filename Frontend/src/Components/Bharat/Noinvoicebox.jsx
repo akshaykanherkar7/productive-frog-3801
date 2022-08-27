@@ -34,26 +34,29 @@ const Noinvoicebox = () => {
           <ModalCloseButton />
           <hr className={Noinvoices.hrline}/>
           <ModalBody pb={6}>
-            <FormControl className={Noinvoices.input_box}>
-             <FormLabel className={Noinvoices.form_label}>INVOICE TYPE</FormLabel>
-             <Select placeholder='Single Invoice'>          
-              <option value='Single Invoice'>Single Invoice</option>
-              <option value='Recuring Invoice'>Recuring Invoice</option>
-              <option value='Bundled Invoice'>Bundled Invoice</option>
-             </Select>
-            </FormControl>
              <FormControl className={Noinvoices.input_box}>
               <FormLabel className={Noinvoices.form_label}>CLIENT NAME</FormLabel>
               <Input ref={initialRef} placeholder='Jane Smith' />
             </FormControl>
-            <FormControl mt={4} className={Noinvoices.input_box}>
-              <FormLabel className={Noinvoices.form_label}>CLIENT EMAIL</FormLabel>
-              <Input placeholder='new@gmail.com' />
-            </FormControl>
+
             <FormControl className={Noinvoices.input_box}>
               <FormLabel className={Noinvoices.form_label}>NEW PROJECT NAME</FormLabel>
               <Input  placeholder='Homepage Redesign' />
-            </FormControl>            
+            </FormControl>  
+            <FormControl className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>ISSUED ON</FormLabel>
+              <Input type={"date"}  placeholder='Homepage Redesign' />
+            </FormControl>              <FormControl className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>DUE DATE</FormLabel>
+              <Input type={"date"} placeholder=' Homepage Redesign' />
+            </FormControl>              <FormControl className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>TOTAL</FormLabel>
+              <Input type="number" placeholder='Enter Amount' />
+            </FormControl>  
+                        <FormControl mt={4} className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>PAID</FormLabel>
+              <Input type="number" placeholder='Enter Amount'/>
+            </FormControl>                    
           </ModalBody>
            <hr className={Noinvoices.hrline2}/>
           <ModalFooter>

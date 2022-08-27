@@ -120,7 +120,7 @@ useEffect(() =>{
   setDat(data[0])
 },[])
   return (
-    <Box>
+    <Box className="nav"> 
       <Box boxShadow="md" rounded="md" bg="white">
         <Box
           pl="10%"

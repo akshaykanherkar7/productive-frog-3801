@@ -108,9 +108,11 @@ const Homepage1 = () => {
   };
   return (
     <Box>
-      <Navbar />
+      <Navbar overflow="hidden" />
+      <Box>
       <Box className="blue-shape _11"></Box>
-
+      </Box>
+    
       <Wrap>
         <WrapItem></WrapItem>
         <WrapItem></WrapItem>
@@ -458,7 +460,7 @@ const Clients = () => {
           w="30px"
           h="10px"
           src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7c5ad3feb65b_Graphic_Projects-min.png"
-          height="600px"
+          height="500px"
           width="600px" ml='20%'
         />
       </div>
@@ -487,7 +489,7 @@ const Contracts = () => {
           w="30px"
           h="10px"
           src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/6050ad775d1c278c443c76d6_Graphic_Contact-opt.png"
-          height="600px"
+          height="500px"
           width="600px" ml='20%'
         />
       </div>
@@ -515,7 +517,7 @@ const Forms = () => {
           w="30px"
           h="10px"
           src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/6050af50cd2ff1fc7708d532_home-forms-opt.png"
-          height="600px"
+          height="500px"
           width="600px" ml='20%'
         />
       </div>
@@ -545,7 +547,7 @@ const Invoices = () => {
           w="30px"
           h="10px"
           src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/60241fc5e974b72f0865513b_Graphic_Invoice-min.png"
-          height="600px"
+          height="500px"
           width="600px" ml='20%'
         />
       </div>
@@ -573,7 +575,7 @@ const Proposals = () => {
             w="30px"
             h="10px"
             src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/6050acdd031b9f58db100f72_Graphic_Proposal-opt.png"
-            height="600px"
+            height="500px"
             width="600px" ml='20%'
           />
         </div>
@@ -602,7 +604,7 @@ const Task = () => {
           w="30px"
           h="10px"
           src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/6050aec11e1747965bfc16a5_task-management-graphic-opt.png"
-          height="600px"
+          height="500px"
           width="600px" ml='20%'
         />
       </div>
@@ -631,7 +633,7 @@ const Time = () => {
           w="30px"
           h="10px"
           src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7c4dc9feb654_Graphic_Track%20time-min.png"
-          height="600px"
+          height="500px"
           width="600px" ml='20%'
         />
       </div>

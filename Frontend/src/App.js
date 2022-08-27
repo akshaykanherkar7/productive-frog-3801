@@ -1,16 +1,23 @@
 import "./App.css";
-import MainRoutes from "./Pages/MainRoutes";
-import Noinvoicebox from "./Components/Bharat/Noinvoicebox"
-import Invoiceedit from "./Components/Bharat/Invoiceedit ";
-import Trialbox from "./Components/Bharat/trialbox";
-import Invoicestable from "./Components/Bharat/Invoicestable";
+
+
+
 
 function App() {
   return (
     <div>
-      {/* <MainRoutes></MainRoutes> */}
 
-      <Invoicestable/>
+      {/* <Trialbox/> */}
+      <MainRoutes></MainRoutes>
+      {/* <Homepage1/> */}
+      {/* <DashSidebar/> */}
+
+
+      <Dashboard></Dashboard>
+
+      {/* <Noinvoicebox/> */}
+      {/* <Invoiceedit/> */}
+
     </div>
   );
 }

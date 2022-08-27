@@ -6,14 +6,21 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const UserController = require("./Controllers/User.controller");
 const { connection } = require("./Config/config");
+const UserController = require("./Controllers/User.controller");
+const ClientController = require("./Controllers/Client.controller");
+const Authentication = require("./Middlewares/Authentication");
+const ProjectController = require("./Controllers/Project.controller");
+const InvoiceController = require("./Controllers/Invoice.controller");
 
 app.get("/", async (req, res) => {
   return res.status(200).send("HomePage");
 });
 
 app.use("/user", UserController);
+app.use("/client", Authentication, ClientController);
+app.use("/project", Authentication, ProjectController);
+app.use("/invoice", Authentication, InvoiceController);
 
 app.listen(process.env.PORT, async () => {
   try {

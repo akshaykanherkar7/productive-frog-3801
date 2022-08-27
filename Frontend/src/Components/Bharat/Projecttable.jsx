@@ -241,18 +241,18 @@ const Projecttable = () => {
                       <PopoverBody>
                         <Flex className={projecttable.dots_menu}>
                           <p className={projecttable.dots_menu_text}>
-                            View Client
+                            View Project
                           </p>
                           <p className={projecttable.dots_menu_text}>
-                            Invite to Client Portal
+                            Mark as Completed
                           </p>
-                          <p className={projecttable.dots_menu_text}>
-                            Archieve Client
-                            <Icon
-                              className={projecttable.crown_icon}
-                              as={FaCrown}
-                            />
+                                                    <p className={projecttable.dots_menu_text}>
+                            Archieve Project
                           </p>
+                                                    <p className={projecttable.dots_menu_text}>
+                            Delete Project
+                          </p>
+
                         </Flex>
                       </PopoverBody>
                     </PopoverContent>

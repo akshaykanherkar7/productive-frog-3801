@@ -59,7 +59,9 @@ const Clienttable = () => {
   return (
     <div>
       <div className={clienttable.buttons_box}>
-        <ButtonGroup size="md" isAttached variant="outline">
+         <Popover marginLeft="50px">
+                    <PopoverTrigger>
+   <ButtonGroup size="md" isAttached variant="outline">
           <IconButton aria-label="Add to friends" icon={<BiSearch />} />
           <Button onClick={handleclick}>
             Filter
@@ -70,6 +72,34 @@ const Clienttable = () => {
             )}
           </Button>
         </ButtonGroup>
+                    </PopoverTrigger>
+                    <PopoverContent>
+                      <PopoverArrow />
+                      <PopoverBody>
+                        <Flex className={clienttable.dots_menu}>
+ <div className={clienttable.select_name}>
+              <p>STATUS</p>
+              <Select
+                className={clienttable.filter_select}
+                placeholder="Active"
+              >
+                <option value="Active">Active</option>
+                <option value="Archieved">Archieved</option>
+              </Select>
+            </div> <div className={clienttable.select_name}>
+              <p>TAGS</p>
+              <Select
+                className={clienttable.filter_select}
+                placeholder="Select..."
+              >
+                <option value="CLIENT">CLIENT</option>
+                <option value="LEAD">LEAD</option>
+              </Select>
+            </div>
+                        </Flex>
+                      </PopoverBody>
+                    </PopoverContent>
+                  </Popover>
 
         <Modal
           initialFocusRef={initialRef}
@@ -137,56 +167,7 @@ const Clienttable = () => {
           </Button>
         </div>
       </div>
-      {show ? (
-        <div className={clienttable.filter_box_parent}>
-          <div className={clienttable.filter_box}>
-            <div className={clienttable.select_name}>
-              <p>PROJECT</p>
-              <Select
-                className={clienttable.filter_select}
-                placeholder="Select..."
-              >
-                <option value="option1">Drafted</option>
-                <option value="option2">Scheduled</option>
-                <option value="option3">Outstanding</option>
-                <option value="option1">Overdue</option>
-                <option value="option1">Pending</option>
-                <option value="option1">Paid</option>
-              </Select>
-            </div>
-            <div className={clienttable.select_name}>
-              <p>STATUS</p>
-              <Select
-                className={clienttable.filter_select}
-                placeholder="Select..."
-              >
-                <option value="option1">Drafted</option>
-                <option value="option2">Scheduled</option>
-                <option value="option3">Outstanding</option>
-                <option value="option1">Overdue</option>
-                <option value="option1">Pending</option>
-                <option value="option1">Paid</option>
-              </Select>
-            </div>
-            <div className={clienttable.select_name}>
-              <p>CLIENT</p>
-              <Select
-                className={clienttable.filter_select}
-                placeholder="Select..."
-              >
-                <option value="option1">Drafted</option>
-                <option value="option2">Scheduled</option>
-                <option value="option3">Outstanding</option>
-                <option value="option1">Overdue</option>
-                <option value="option1">Pending</option>
-                <option value="option1">Paid</option>
-              </Select>
-            </div>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
+      
       <div className={clienttable.table}>
         <TableContainer>
           <Table variant="simple">

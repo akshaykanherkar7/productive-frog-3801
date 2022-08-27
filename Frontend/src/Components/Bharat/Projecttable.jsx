@@ -128,35 +128,19 @@ const Projecttable = () => {
       {show ? (
         <div className={projecttable.filter_box_parent}>
           <div className={projecttable.filter_box}>
-            <div className={projecttable.select_name}>
-              <p>PROJECT</p>
-              <Select
-                className={projecttable.filter_select}
-                placeholder="Select..."
-              >
-                <option value="option1">Drafted</option>
-                <option value="option2">Scheduled</option>
-                <option value="option3">Outstanding</option>
-                <option value="option1">Overdue</option>
-                <option value="option1">Pending</option>
-                <option value="option1">Paid</option>
-              </Select>
-            </div>
+
             <div className={projecttable.select_name}>
               <p>STATUS</p>
               <Select
                 className={projecttable.filter_select}
-                placeholder="Select..."
+                placeholder="Active"
               >
-                <option value="option1">Drafted</option>
-                <option value="option2">Scheduled</option>
-                <option value="option3">Outstanding</option>
-                <option value="option1">Overdue</option>
-                <option value="option1">Pending</option>
-                <option value="option1">Paid</option>
+                <option value="option1">Active</option>
+                <option value="option2">Completed</option>
+                <option value="option3">Archieved</option>
               </Select>
             </div>
-            <div className={projecttable.select_name}>
+                        <div className={projecttable.select_name}>
               <p>CLIENT</p>
               <Select
                 className={projecttable.filter_select}
@@ -241,18 +225,18 @@ const Projecttable = () => {
                       <PopoverBody>
                         <Flex className={projecttable.dots_menu}>
                           <p className={projecttable.dots_menu_text}>
-                            View Client
+                            View Project
                           </p>
                           <p className={projecttable.dots_menu_text}>
-                            Invite to Client Portal
+                            Mark as Completed
                           </p>
-                          <p className={projecttable.dots_menu_text}>
-                            Archieve Client
-                            <Icon
-                              className={projecttable.crown_icon}
-                              as={FaCrown}
-                            />
+                                                    <p className={projecttable.dots_menu_text}>
+                            Archieve Project
                           </p>
+                                                    <p className={projecttable.dots_menu_text}>
+                            Delete Project
+                          </p>
+
                         </Flex>
                       </PopoverBody>
                     </PopoverContent>

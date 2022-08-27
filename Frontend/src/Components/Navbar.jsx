@@ -120,7 +120,7 @@ useEffect(() =>{
   setDat(data[0])
 },[])
   return (
-    <Box>
+    <Box className="nav"> 
       <Box boxShadow="md" rounded="md" bg="white">
         <Box
           pl="10%"
@@ -274,7 +274,7 @@ useEffect(() =>{
       >
         {" "}
         <Box w="45%">
-          <Box pt="-10%" fontSize={15}>
+          <Box pt="-10%"  opacity=".92" fontSize={15}>
             {" "}
             <Flex
               id="pehla"
@@ -403,7 +403,7 @@ useEffect(() =>{
          
           <Box >
             {
-              data.length>1?<ComponentModel item={dat} />:<ComponentModel item={data[0]} />
+              data.length>1?<ComponentModel opacity=".72"  item={dat} />:<ComponentModel item={data[0]} />
             }
 
             <Flex

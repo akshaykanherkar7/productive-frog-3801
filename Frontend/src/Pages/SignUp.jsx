@@ -18,6 +18,9 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+
+  import "./Singup.css"
+  
   
   export default function SignupCard() {
     const [showPassword, setShowPassword] = useState(false);
@@ -46,16 +49,16 @@ import {
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
            
-            <Heading as='h3' size='lg'>
+            <Heading color="blackAlpha.900" fontFamily="sans-serif" fontWeight="600" as='h4' size='lg'>
             Try Bonsai free with your Workflow today
   </Heading>
   <br/>
-  <Heading fontSize={'4xl'} textAlign={'center'}>
+  <Heading  color="blackAlpha.900" fontSize={'4xl'} textAlign={'center'}>
               Sign up  
             </Heading>
-            <Text fontSize={'lg'} color={'gray.600'}>
+            {/* <Text fontSize={'lg'} color={'gray.600'}>
               to enjoy all of our cool features ✌️
-            </Text>
+            </Text> */}
           </Stack>
           <Box
             rounded={'lg'}
@@ -66,7 +69,7 @@ import {
               <HStack>
                 <Box>
                   <FormControl id="firstName" isRequired>
-                    <FormLabel>Full Name</FormLabel>
+                    <FormLabel color="grey.800">Full Name</FormLabel>
                     <Input style={{"width" : "180%"}} type="text" value={fullname} onChange={(e) => {setFullname(e.target.value)}}/>
                   </FormControl>
                 </Box>
@@ -78,11 +81,11 @@ import {
                 </Box> */}
               </HStack>
               <FormControl id="email" isRequired>
-                <FormLabel>Email address</FormLabel>
+                <FormLabel color="grey.800">Email address</FormLabel>
                 <Input type="email" value={email} onChange={(e) => {setEmail(e.target.value)}} />
               </FormControl>
-              <FormControl id="password" isRequired>
-                <FormLabel>Password</FormLabel>
+              <FormControl  id="password" isRequired>
+                <FormLabel color="grey.800">Password</FormLabel>
                 <InputGroup>
                   <Input type={showPassword ? 'text' : 'password'} value={pass} onChange={(e) => {setPass(e.target.value)}} />
                   <InputRightElement h={'full'}>
@@ -99,12 +102,12 @@ import {
                 <br/>
 
 <Flex>
-  <Text style={{"fontWeight" : "bold"}}>COUNTRY</Text>
+  <Text style={{"fontWeight" : "600", "color" : "grey.800"}}>COUNTRY</Text>
   <Spacer/>
-  <Text style={{"marginRight" : "30%","fontWeight" : "bold"}}>CURRENCY</Text>
+  <Text style={{"marginRight" : "28%","fontWeight" : "600","color" : "grey.800"}}>CURRENCY</Text>
 </Flex>
 
-<Flex>
+<Flex marginTop="15px">
 
 <Select variant="outline" id="country" name="country" >
                 <option value="Afghanistan">Afghanistan</option>
@@ -356,7 +359,7 @@ import {
 <Spacer/>
 
 
-<Select placeholder='Select Currency'>
+<Select marginLeft="15px" placeholder='Select Currency'>
 
 <option value="USD" selected="selected" label="US dollar">USD</option>
     <option value="EUR" label="Euro">EUR</option>
@@ -526,7 +529,7 @@ import {
 </Flex>
 
               </FormControl>
-              <Link style={{"fontWeight":"lighter"}} href='https://app.hellobonsai.com/terms'>Terms and conditions</Link>
+              <Link color="grey.800" style={{"fontWeight":"lighter"}} href='https://app.hellobonsai.com/terms'>Terms and conditions</Link>
               <Stack spacing={10} pt={2}>
                 <Button
                   loadingText="Submitting"
@@ -541,7 +544,7 @@ import {
               </Stack>
               <Stack pt={6}>
                 <Text align={'center'}>
-                  Already a user? <Link href='/Login' color={'blue.400'}>Login</Link>
+                  Already a user? <Link href='/Login' color={'#00B295'}>Login</Link>
                 </Text>
               </Stack>
             </Stack>

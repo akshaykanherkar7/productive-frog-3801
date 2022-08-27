@@ -1,4 +1,5 @@
 import "./App.css";
+import Homepage1 from "./Pages/Homepage1";
 
 
 
@@ -8,12 +9,12 @@ function App() {
     <div>
 
       {/* <Trialbox/> */}
-      <MainRoutes></MainRoutes>
-      {/* <Homepage1/> */}
+      {/* <MainRoutes></MainRoutes> */}
+     
       {/* <DashSidebar/> */}
+    <Homepage1/>
 
-
-      <Dashboard></Dashboard>
+      {/* <Dashboard></Dashboard> */}
 
       {/* <Noinvoicebox/> */}
       {/* <Invoiceedit/> */}

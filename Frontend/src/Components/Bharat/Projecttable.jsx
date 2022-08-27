@@ -22,8 +22,9 @@ import {
   Th,
   Thead,
   Tr,
+  useToast,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import projecttable from "./projecttable.module.css";
 import { BiSearch } from "react-icons/bi";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
@@ -45,16 +46,71 @@ import {
 import Noinvoices from "./Noinvoices.module.css";
 import { FaCrown } from "react-icons/fa";
 import { TiCloudStorage } from "react-icons/ti";
+import { useDispatch, useSelector } from "react-redux";
+import { getClientAPI } from "../../Redux/Client/client.action";
+import {
+  createProjectAPI,
+  deleteProjectAPI,
+  getProjectAPI,
+} from "../../Redux/Project/project.action";
 
 const Projecttable = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [show, setshow] = useState(false);
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+  const toast = useToast();
+
+  const [title, setTitle] = useState("");
+  const [client, setClient] = useState("");
+  const [startdate, setStartdate] = useState("");
+  const [due, setDue] = useState(0);
+  const [paid, setPaid] = useState(0);
+
+  const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
+  const { Client } = useSelector((state) => state.client);
+  const { Project } = useSelector((state) => state.project);
+  console.log("Project:", Project);
+
+  const handleCreateProject = () => {
+    const NewProject = {
+      title: title,
+      client: client,
+      startdate: startdate,
+      due: due,
+      paid: paid,
+    };
+    console.log(NewProject)
+    dispatch(createProjectAPI(NewProject, token)).then((res) => {
+      dispatch(getProjectAPI(token));
+    });
+    toast({
+      title: "Project Added Successfully",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
+    onClose();
+  };
+
+  const handleDeleteProject = (id) => {
+    dispatch(deleteProjectAPI(id,token)).then((res) => {
+      dispatch(getProjectAPI(token))
+    })
+  }
 
   const handleclick = () => {
     setshow(!show);
   };
+
+  useEffect(() => {
+    dispatch(getClientAPI(token));
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getProjectAPI(token));
+  }, [dispatch]);
 
   return (
     <div>
@@ -89,32 +145,58 @@ const Projecttable = () => {
                 <FormLabel className={Noinvoices.form_label}>
                   CLIENT NAME
                 </FormLabel>
-                <Input ref={initialRef} placeholder="Jane Smith" />
+                <Select onChange={(e) => setClient(e.target.value)}>
+                  {Client.map((el) => (
+                    <option value={`${el.clientusername}`}>
+                      {el.clientusername}
+                    </option>
+                  ))}
+                </Select>
               </FormControl>
               <FormControl className={Noinvoices.input_box}>
                 <FormLabel className={Noinvoices.form_label}>
                   NEW PROJECT NAME
                 </FormLabel>
-                <Input placeholder="Homepage Redesign" />
+                <Input
+                  placeholder="Homepage Redesign"
+                  onChange={(e) => setTitle(e.target.value)}
+                />
               </FormControl>
               <FormControl className={Noinvoices.input_box}>
                 <FormLabel className={Noinvoices.form_label}>
                   ISSUED ON
                 </FormLabel>
-                <Input type={"date"} placeholder="Homepage Redesign" />
+                <Input
+                  type={"date"}
+                  placeholder="Homepage Redesign"
+                  onChange={(e) => setStartdate(e.target.value)}
+                />
               </FormControl>{" "}
               <FormControl className={Noinvoices.input_box}>
                 <FormLabel className={Noinvoices.form_label}>DUE</FormLabel>
-                <Input type="number" placeholder="Enter Amount" />
+                <Input
+                  type="number"
+                  placeholder="Enter Amount"
+                  onChange={(e) => setDue(e.target.value)}
+                />
               </FormControl>
               <FormControl mt={4} className={Noinvoices.input_box}>
                 <FormLabel className={Noinvoices.form_label}>PAID</FormLabel>
-                <Input type="number" placeholder="Enter Amount" />
+                <Input
+                  type="number"
+                  placeholder="Enter Amount"
+                  onChange={(e) => setPaid(e.target.value)}
+                />
               </FormControl>
             </ModalBody>
             <hr className={Noinvoices.hrline2} />
             <ModalFooter>
-              <Button colorScheme="green" w={"90%"} margin="auto">
+              <Button
+                colorScheme="green"
+                w={"90%"}
+                margin="auto"
+                onClick={handleCreateProject}
+              >
                 Create Project
               </Button>
             </ModalFooter>
@@ -164,7 +246,7 @@ const Projecttable = () => {
           <Table variant="simple">
             <Thead>
               <Tr className={projecttable.table_head}>
-                                <Th isNumeric>
+                <Th isNumeric>
                   <Flex>
                     <div>Title</div>
 
@@ -194,21 +276,21 @@ const Projecttable = () => {
                 <Th isNumeric>
                   <Flex>DUE</Flex>
                 </Th>
-                                <Th isNumeric>
+                <Th isNumeric>
                   <Flex>PAID</Flex>
                 </Th>
                 <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td>12/12/2012</Td>
-                <Td>
-                  2000
-                </Td>
-                <Td>25.4</Td>
+              {
+                Project.map((el) => (
+                  <Tr>
+                <Td>{el.title}</Td>
+                <Td>{el.client}</Td>
+                <Td>{el.startdate}</Td>
+                <Td>{el.due}</Td>
+                <Td>{el.paid}</Td>
                 <Td>
                   <Popover marginLeft="50px">
                     <PopoverTrigger>
@@ -228,7 +310,14 @@ const Projecttable = () => {
                             View Project
                           </p>
                           <p className={projecttable.dots_menu_text}>
-                            Mark as Completed
+
+                            Update Client
+                          </p>
+                          <p className={projecttable.dots_menu_text} onClick={() => handleDeleteProject(el._id)}>
+                            Delete Client
+                          </p>
+                          <p className={projecttable.dots_menu_text}>
+                            Invite to Client Portal
                           </p>
                                                     <p className={projecttable.dots_menu_text}>
                             Archieve Project
@@ -243,6 +332,8 @@ const Projecttable = () => {
                   </Popover>
                 </Td>
               </Tr>
+                ))
+              }
             </Tbody>
           </Table>
         </TableContainer>

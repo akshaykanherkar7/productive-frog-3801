@@ -44,6 +44,7 @@
     padding: 11px 20px 9px;
     font-weight: 600;
     color: #6d6d6d;
+    cursor: pointer;
 }
 
 .filter_select {

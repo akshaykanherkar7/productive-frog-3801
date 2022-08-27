@@ -14,6 +14,14 @@ import { Wrap, WrapItem } from "@chakra-ui/react";
 import { Navbar } from "../Components/Navbar";
 import "../Components/Navbar.css";
 import { useState } from "react";
+import '../Components/Slider.css'
+import "swiper/css/bundle";
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
+import { Footer } from "../Components/Footer";
+
 const Homepage1 = () => {
   const handleClick = () => {
     window.scrollTo(0, 1);
@@ -107,9 +115,9 @@ const Homepage1 = () => {
     setForms(true);
   };
   return (
-    <Box>
-      <Navbar overflow="hidden" />
-      <Box>
+    <Box >
+      <Navbar />
+      <Box className="blue-box ">
       <Box className="blue-shape _11"></Box>
       </Box>
     
@@ -238,14 +246,14 @@ const Homepage1 = () => {
           </WrapItem>
         </Wrap>
       </Box>
-
+     
       <Box w="100%" h="1000px" align="center">
         <Flex w="80%" pt="15%" p="5%">
-          <Box w="40%" className="leftDivDropdown" fontSize={"1.5rem"}
-          
+          <Box w="40%" className="leftDivDropdown" fontSize={"1.5rem"}           
           >
-          
-           <Flex  p="5%"   _hover={{
+      
+        
+           <Flex  p="5%"  style={{  boxShadow:proposal? "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px":""}}  _hover={{
                   cursor: "pointer",
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
                 }} opacity=".7" onClick={handleProposal}>
@@ -261,7 +269,7 @@ const Homepage1 = () => {
               </Box>
             </Flex>
             <hr />
-            <Flex   _hover={{
+            <Flex style={{  boxShadow:contract ? "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px":""}}    _hover={{
                   cursor: "pointer",
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
                 }}  p="5%" spacing="-24px" opacity=".7" onClick={handleContractsl}>
@@ -278,7 +286,7 @@ const Homepage1 = () => {
               </Box>
             </Flex>
             <hr />
-            <Flex   _hover={{
+            <Flex style={{  boxShadow:clients ? "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px":""}}  _hover={{
                   cursor: "pointer",
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
                 }}  p="5%" spacing="-24px" opacity=".7" onClick={handleClients}>
@@ -295,7 +303,7 @@ const Homepage1 = () => {
               </Box>
             </Flex>
             <hr />
-            <Flex   _hover={{
+            <Flex style={{  boxShadow:time ? "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px":""}}  _hover={{
                   cursor: "pointer",
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
                 }}  p="5%" spacing="-24px" opacity=".7" onClick={handleTime}>
@@ -312,7 +320,7 @@ const Homepage1 = () => {
               </Box>
             </Flex>
             <hr />
-            <Flex   _hover={{
+            <Flex style={{  boxShadow:invoices ? "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px":""}}  _hover={{
                   cursor: "pointer",
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
                 }}  p="5%" spacing="-24px" opacity=".7" onClick={handleInvoices}>
@@ -329,7 +337,7 @@ const Homepage1 = () => {
               </Box>
             </Flex>
             <hr />
-            <Flex   _hover={{
+            <Flex style={{  boxShadow:task ? "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px":""}}  _hover={{
                   cursor: "pointer",
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
                 }}  p="5%" spacing="-24px" opacity=".7" onClick={handleTask}>
@@ -346,7 +354,7 @@ const Homepage1 = () => {
               </Box>
             </Flex>
             <hr />
-            <Flex   _hover={{
+            <Flex style={{  boxShadow:accounting ? "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px":""}}  _hover={{
                   cursor: "pointer",
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
                 }}  p="5%" spacing="-24px" opacity=".7" onClick={handleAccounting}>
@@ -363,7 +371,7 @@ const Homepage1 = () => {
               </Box>
             </Flex>
             <hr />
-            <Flex   _hover={{
+            <Flex style={{  boxShadow:forms ? "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px":""}}  _hover={{
                   cursor: "pointer",
                   boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
                 }}  p="5%" spacing="-24px" opacity=".7" onClick={handleForms}>
@@ -403,6 +411,82 @@ const Homepage1 = () => {
           </Box>
         </Flex>
       </Box>
+
+
+
+      <Box mt="-10%">
+      <Box className='comparisionDiv'>
+      <Heading size="lg">Trusted by 500K+ self-employed workers <br/>and small businesses</Heading>
+      <br/>
+      <br/>
+      <p style={{fontSize:"20px"}}>Whether you’re just getting started or your business is<br/> booming, Bonsai has you covered.</p>
+       <br/>
+      <Flex justifyContent="center" gap="7rem" className='withWithout' m="auto">
+        <Box >
+           
+           <br/>
+           <Image m="auto" src='https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7ca8ebfeb662_ill_Built%20for_4%20block.svg'/>
+           <br/>
+           <br/>
+           <h3>Built for All Work Types</h3>
+           <br/>
+           <p>We proudly back people with wide-<br/>ranging businesses—from design and<br/> marketing to development, writing, and<br/> photography.</p>
+        </Box>
+        <Box>
+          
+          <br/>
+          <Image m="auto"  src='https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7c967efeb661_ill_Global%20Support_4%20block.svg'/>
+          <br/>
+          <br/>
+          <h3>Built for Global Businesses</h3>
+          <br/>
+          <p>Bonsai has international coverage<br/> across the United States, Canada, UK,<br/> Australia and more, with 180 currencies supported.</p>
+
+        </Box>
+
+      </Flex>
+
+    </Box>
+      </Box>
+
+
+      <Box >
+     
+        <Heading fontSize="2rem" opacity=".9" fontWeight="500" justify="center" align="center">Don't just take it from us.</Heading>
+        <Box class="right-shape home"></Box>
+      <Box pl="20%" pr="20%" pt="5%" pb="10%">
+      <Swiper p="5% 15% 5% 15%" 
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide><Image src="https://i.postimg.cc/RVtxCSkm/Whats-App-Image-2022-08-27-at-9-09-53-PM.jpg"></Image></SwiperSlide>
+        <SwiperSlide><Image src="https://i.postimg.cc/NMyB11z9/Whats-App-Image-2022-08-27-at-9-10-23-PM.jpg"></Image></SwiperSlide>
+       
+      </Swiper>
+      </Box>
+      </Box>
+      <Box p="5% 10% 10% 10%">
+        <Box className="small_box" w="90%" m="auto" h="12rem" borderRadius={"8px"}> 
+      <Flex m="auto"pt="5%"> <Box m="auto" p="auto"> <Heading fontSize="2.5rem">It’s your business.<br/>
+We’re here to help it grow.</Heading></Box>
+        <Box m="auto" p="auto"> <Button
+              background="#00b289"
+              _hover={{
+                background: "#00b289",
+                color: "white",
+              }}
+              color="white"
+              
+            >
+              Start Free
+            </Button></Box></Flex>
+        </Box>
+      </Box>
+      <Footer/>
     </Box>
   );
 };
@@ -411,8 +495,8 @@ export default Homepage1;
 
 const Accounting = () => {
   return (
-    <div>
-      <div className="upperDivSub">
+    <Box>
+      <Box className="upperDivSub">
         <Heading opacity=".9" size='xl'>Automate Your Finances</Heading>
         <br />
         <p style={{ fontSize: "20px" }}>
@@ -424,8 +508,8 @@ const Accounting = () => {
         <Box className="e">
           EXPLORE ACCOUNTING AND TAXES <hr />
         </Box>
-      </div>
-      <div className="lowerDivSub">
+      </Box>
+      <Box className="lowerDivSub">
         <Image className="lowerDivSub"
           w="30px"
           h="10px"
@@ -433,15 +517,16 @@ const Accounting = () => {
           height="auto"
           width="auto"
         />
-      </div>
-    </div>
+      </Box>
+     
+    </Box>
   );
 };
 
 const Clients = () => {
   return (
-    <div>
-      <div className="upperDivSub" >
+    <Box>
+      <Box className="upperDivSub" >
         <Heading opacity=".9" size='xl'>Stay Organized</Heading>
         <br />
         <p style={{ fontSize: "20px" }}>
@@ -454,8 +539,8 @@ const Clients = () => {
         <Box className="e">
           EXPLORE PROJECTS <hr />
         </Box>
-      </div>
-      <div className="lowerDivSub">
+      </Box>
+      <Box className="lowerDivSub">
         <Image
           w="30px"
           h="10px"
@@ -463,15 +548,15 @@ const Clients = () => {
           height="500px"
           width="600px" ml='20%'
         />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
 const Contracts = () => {
   return (
-    <div>
-      <div className="upperDivSub">
+    <Box>
+      <Box className="upperDivSub">
         <Heading opacity=".9" size='xl'>Protect Your Business</Heading>
         <br />
         <p style={{ fontSize: "20px" }}>
@@ -483,24 +568,24 @@ const Contracts = () => {
         <Box className="e">
           EXPLORE CONTRACTS <hr />
         </Box>
-      </div>
-      <div className="lowerDivSub">
+      </Box>
+      <Box className="lowerDivSub">
         <Image
-          w="30px"
+          w="30px" 
           h="10px"
           src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/6050ad775d1c278c443c76d6_Graphic_Contact-opt.png"
           height="500px"
           width="600px" ml='20%'
         />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
 const Forms = () => {
   return (
-    <div>
-      <div className="upperDivSub">
+    <Box>
+      <Box className="upperDivSub">
         <Heading opacity=".9" size='xl'>Ask Your Clients</Heading>
         <br />
         <p style={{ fontSize: "20px" }}>
@@ -511,8 +596,8 @@ const Forms = () => {
         <Box className="e">
           EXPLORE FORM <hr />
         </Box>
-      </div>
-      <div className="lowerDivSub">
+      </Box>
+      <Box className="lowerDivSub">
         <Image
           w="30px"
           h="10px"
@@ -520,15 +605,15 @@ const Forms = () => {
           height="500px"
           width="600px" ml='20%'
         />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
 const Invoices = () => {
   return (
-    <div>
-      <div className="upperDivSub">
+    <Box>
+      <Box className="upperDivSub">
         <Heading opacity=".9" size='xl'>Get Paid Faster</Heading>
         <br />
         <p style={{ fontSize: "20px" }}>
@@ -541,8 +626,8 @@ const Invoices = () => {
         <Box className="e">
           EXPLORE INVIOCES <hr />
         </Box>
-      </div>
-      <div className="lowerDivSub">
+      </Box>
+      <Box className="lowerDivSub">
         <Image
           w="30px"
           h="10px"
@@ -550,15 +635,15 @@ const Invoices = () => {
           height="500px"
           width="600px" ml='20%'
         />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 const Proposals = () => {
   return (
     <>
-      <div>
-        <div className="upperDivSub">
+      <Box>
+        <Box className="upperDivSub">
           <Heading opacity=".9" size='xl'>Win More Work</Heading>
           <br />
           <p style={{ fontSize: "20px" }}>
@@ -569,8 +654,8 @@ const Proposals = () => {
           <Box className="e">
             EXPLORE PROPOSALS <hr />
           </Box>
-        </div>
-        <div className="lowerDivSub">
+        </Box>
+        <Box className="lowerDivSub">
           <Image
             w="30px"
             h="10px"
@@ -578,15 +663,15 @@ const Proposals = () => {
             height="500px"
             width="600px" ml='20%'
           />
-        </div>
-      </div>
+        </Box>
+      </Box>
     </>
   );
 };
 const Task = () => {
   return (
-    <div>
-      <div className="upperDivSub">
+    <Box>
+      <Box className="upperDivSub">
         <Heading opacity=".9" size='xl'>Be More Effective</Heading>
         <br />
         <p style={{ fontSize: "20px" }}>
@@ -598,8 +683,8 @@ const Task = () => {
         <Box className="e">
           EXPLORE TASKS <hr />
         </Box>
-      </div>
-      <div className="lowerDivSub">
+      </Box>
+      <Box className="lowerDivSub">
         <Image
           w="30px"
           h="10px"
@@ -607,15 +692,15 @@ const Task = () => {
           height="500px"
           width="600px" ml='20%'
         />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
 const Time = () => {
   return (
-    <div>
-      <div className="upperDivSub">
+    <Box>
+      <Box className="upperDivSub">
         <Heading opacity=".9" size='xl'>Keep It Simple</Heading>
         <br />
         <p style={{ fontSize: "20px" }}>
@@ -627,8 +712,8 @@ const Time = () => {
         <Box className="e">
           EXPLORE TIME TRACKING <hr />
         </Box>
-      </div>
-      <div className="lowerDivSub">
+      </Box>
+      <Box className="lowerDivSub">
         <Image
           w="30px"
           h="10px"
@@ -636,7 +721,7 @@ const Time = () => {
           height="500px"
           width="600px" ml='20%'
         />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };

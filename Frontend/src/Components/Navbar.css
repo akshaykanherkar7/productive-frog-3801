@@ -24,12 +24,53 @@ position:absolute;
 }
 
 
-.body{
+body{
     color: #4c525a;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  
+   
+    overflow-x:hidden;
     }
+    .comparisionDiv{
+        height: 70%;
+        width: 80%;
+        opacity: .85;
+       margin: auto;
+        padding: 4%;
+        text-align: center;
+        
+    }
+    .withWithout{
+        display: flex;
+        height: 90%;
+        
+    }
+
+    .small_box{
+       background-color:  #e0eff8;
+    }
+    .right-shape {
+        position: absolute;
+        left: 57%;
+        top: 31%;
+        z-index: -1;
+        width: 80%;
+        height: 90%;
+        border-radius: 94px;
+        background-color: #fff5e8;
+        -webkit-transform: rotate(-21deg);
+        -ms-transform: rotate(-21deg);
+        transform: rotate(-21deg);
+    }
+    .right-shape.home {
+       
+        z-index: -1;
+    }
+    @media screen and (max-width: 991px){
+.right-shape {
+    left: 52%;
+    display: block;
+    height: 600px;
+}}
 .blue-shape._11 {
     left: auto;
     top: -18%;
@@ -64,12 +105,35 @@ position:absolute;
   
     
 }
+.blue-box{
+    box-sizing: border-box;
+     overflow: hidden;
+}
 .nav{
         position: sticky;
     left: 0;
     top: 0;
+    width:100%;
     right: 0;
     bottom: auto;
     z-index: 100000000;
     background-color: #fff;
 }
+.footerContainer {
+    display: flex;
+    opacity:.7.5;
+    justify-content: space-around;
+    font-family: "Proximanova opt", sans-serif;
+  }
+  .fChildContainer > p {
+    font-size: 16px;
+    margin-bottom: 7px;
+    color: #a4a4ae;
+  }
+  .fChildContainer > h6 {
+    margin-bottom: 50px;
+    color: rgba(53, 52, 52, 0.824);
+    font-weight: 600;
+    opacity:.7.5;
+    font-family: "Proximanova opt", sans-serif;
+  }

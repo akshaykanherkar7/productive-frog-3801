@@ -11,6 +11,7 @@ export const getClientAPI = (token) => (dispatch) => {
       },
     })
     .then((res) => {
+      console.log('resFROMSTORE:', res)
       dispatch({ type: types.GET_CLIENT_SUCCESS, payload: res.data });
     })
     .catch((err) => {
@@ -18,7 +19,9 @@ export const getClientAPI = (token) => (dispatch) => {
     });
 };
 
-export const createClientAPI = (client) => (dispatch) => {
+export const createClientAPI = (client,token) => (dispatch) => {
+  console.log('tokenFromRedux:', token)
+  console.log('clientFromRedux:', client)
   return axios.post("https://morning-fortress-32806.herokuapp.com/client",client, {
     headers: {
       Authorization: "Bearer " + token,

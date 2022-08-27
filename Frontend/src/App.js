@@ -1,26 +1,10 @@
 import "./App.css";
-
-
-
-
+import MainRoutes from "./Pages/MainRoutes";
 
 function App() {
   return (
     <div>
-
-
-      {/* <Trialbox/> */}
-      {/* <MainRoutes></MainRoutes> */}
-     
-      {/* <DashSidebar/> */}
-    <Homepage1/>
-
-      {/* <Dashboard></Dashboard> */}
-
-      {/* <Noinvoicebox/> */}
-      {/* <Invoiceedit/> */}
-
-
+      <MainRoutes></MainRoutes>
     </div>
   );
 }

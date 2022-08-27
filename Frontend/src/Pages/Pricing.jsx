@@ -20,6 +20,7 @@ import {
   AccordionIcon,
   
 } from '@chakra-ui/react';
+import styled from "styled-components";
 import { FaCheckCircle } from 'react-icons/fa';
 
  import { MdKeyboardArrowRight } from 'react-icons/md';
@@ -32,6 +33,7 @@ function PriceWrapper({ children }) {
     
     <Box
       mb={4}
+      background="#fff"
       shadow="base"
       borderWidth="1px"
       height="100vh"
@@ -78,7 +80,7 @@ export default function Pricing() {
         py={10}>
 
 
-         <PriceWrapper bg={"white"}>
+         <PriceWrapper >
           <Box py={2} px={12}  textAlign={"left"}>
             <Text fontWeight="500" fontSize="1.5rem" >
             Starter
@@ -149,6 +151,9 @@ export default function Pricing() {
         </PriceWrapper>
 
         <PriceWrapper>
+         {/* < LogoWrapper >
+        <p> MOST POPULAR</p>
+         </LogoWrapper> */}
           <Box py={2} px={12}  textAlign={"left"}>
             <Text fontWeight="500" fontSize="1.5rem" >
             Professional
@@ -415,3 +420,34 @@ We’re here to help it grow.</Heading></Stack>
   );
 }
 
+
+
+
+const LogoWrapper =styled.div`
+position: absolute;
+    
+  
+    
+   
+    width: 330px;
+    padding: 2px ;
+    background-color: #01b289;
+    margin-top:57px;
+    margin-left:193px;
+    
+    transform: rotate(45deg);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    clip-path: 
+    polygon(
+      60% 0% , 100% 100%,100% 50% ,50% 100%,100% 100%,100% 100%
+     
+    );
+   
+`
+
+// clipPath: polygon(50% 0% , 100% 0%,100% 50% ,50% 100%,0% -15%,0% 0%);

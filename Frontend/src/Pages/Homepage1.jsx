@@ -20,6 +20,7 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import { Footer } from "../Components/Footer";
 
 const Homepage1 = () => {
   const handleClick = () => {
@@ -468,7 +469,7 @@ const Homepage1 = () => {
       </Swiper>
       </Box>
       </Box>
-      <Box p="5% 10% 5% 10%">
+      <Box p="5% 10% 10% 10%">
         <Box className="small_box" w="90%" m="auto" h="12rem" borderRadius={"8px"}> 
       <Flex m="auto"pt="5%"> <Box m="auto" p="auto"> <Heading fontSize="2.5rem">It’s your business.<br/>
 We’re here to help it grow.</Heading></Box>
@@ -485,6 +486,7 @@ We’re here to help it grow.</Heading></Box>
             </Button></Box></Flex>
         </Box>
       </Box>
+      <Footer/>
     </Box>
   );
 };
@@ -516,6 +518,7 @@ const Accounting = () => {
           width="auto"
         />
       </Box>
+     
     </Box>
   );
 };

@@ -79,36 +79,31 @@ const Invoicestable = () => {
             </ModalHeader>
             <ModalCloseButton />
             <hr className={Noinvoices.hrline} />
-            <ModalBody pb={6}>
-              <FormControl className={Noinvoices.input_box}>
-                <FormLabel className={Noinvoices.form_label}>
-                  INVOICE TYPE
-                </FormLabel>
-                <Select placeholder="Single Invoice">
-                  <option value="Single Invoice">Single Invoice</option>
-                  <option value="Recuring Invoice">Recuring Invoice</option>
-                  <option value="Bundled Invoice">Bundled Invoice</option>
-                </Select>
-              </FormControl>
-              <FormControl className={Noinvoices.input_box}>
-                <FormLabel className={Noinvoices.form_label}>
-                  CLIENT NAME
-                </FormLabel>
-                <Input ref={initialRef} placeholder="Jane Smith" />
-              </FormControl>
-              <FormControl mt={4} className={Noinvoices.input_box}>
-                <FormLabel className={Noinvoices.form_label}>
-                  CLIENT EMAIL
-                </FormLabel>
-                <Input placeholder="new@gmail.com" />
-              </FormControl>
-              <FormControl className={Noinvoices.input_box}>
-                <FormLabel className={Noinvoices.form_label}>
-                  NEW PROJECT NAME
-                </FormLabel>
-                <Input placeholder="Homepage Redesign" />
-              </FormControl>
-            </ModalBody>
+<ModalBody pb={6}>
+             <FormControl className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>CLIENT NAME</FormLabel>
+              <Input ref={initialRef} placeholder='Jane Smith' />
+            </FormControl>
+
+            <FormControl className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>NEW PROJECT NAME</FormLabel>
+              <Input  placeholder='Homepage Redesign' />
+            </FormControl>  
+            <FormControl className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>ISSUED ON</FormLabel>
+              <Input type={"date"}  placeholder='Homepage Redesign' />
+            </FormControl>              <FormControl className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>DUE DATE</FormLabel>
+              <Input type={"date"} placeholder=' Homepage Redesign' />
+            </FormControl>              <FormControl className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>TOTAL</FormLabel>
+              <Input type="number" placeholder='Enter Amount' />
+            </FormControl>  
+                        <FormControl mt={4} className={Noinvoices.input_box}>
+              <FormLabel className={Noinvoices.form_label}>PAID</FormLabel>
+              <Input type="number" placeholder='Enter Amount'/>
+            </FormControl>                    
+          </ModalBody>     
             <hr className={Noinvoices.hrline2} />
             <ModalFooter>
               <Button colorScheme="green" w={"90%"} margin="auto">
@@ -207,20 +202,20 @@ const Invoicestable = () => {
                   </div>
                 </Th>
                 <Th isNumeric>PROJECT</Th>
-                <Th isNumeric>CLIENT</Th>
+                <Th  isNumeric><Flex marginLeft={"24px"}>CLIENT</Flex></Th>
                 <Th isNumeric>TOTAL</Th>
                 <Th isNumeric>PAID</Th>
                 <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
-              <Tr className={invoicetable.table_row}>
+              <Tr >
                 <Td>inches</Td>
                 <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
+                <Td  >25.4</Td>
+                <Td ><Flex className={invoicetable.tabledata_col4}>inches</Flex></Td>
+                <Td className={invoicetable.tabledata_col5}><Flex className={invoicetable.tabledata_col5}>millimetres (mm)</Flex></Td>
+                <Td  isNumeric>25.4</Td>
                 <Td isNumeric>25.4</Td>
                 <Td isNumeric>
                   <Popover marginLeft="50px">

@@ -1,92 +1,179 @@
 .main {
-    width: 50%;
-    margin: auto;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 50px;
+  height: auto;
 }
 
 .top_buttons {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .top_buttons_right {
-    display: flex;
-    gap: 8%;
+  display: flex;
+  gap: 8%;
 }
 
 .editbox_main {
-    margin-top: 50px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
-        rgb(209, 213, 219) 0px 0px 0px 1px inset;
-    height: 1000px;
-    padding: 10px 0px;
+  margin-top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  height: auto;
+  padding: 10px 0px;
 }
 
 .invoiceNum {
-    display: flex;
-    align-items: center;
-    padding-left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
 }
 
 .editbox_top {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 0 15px;
 }
 
 .profile {
-    margin: auto;
-    width: 100%;
+  margin: auto;
+  width: 100%;
 }
 
 .profile_image {
-    width: 20%;
-    height: 20%;
-    margin: auto;
-    margin-top: 30px;
-    border: 03px solid lightgray;
-    padding: 5px 5px;
-    background: rgba(255, 255, 255, 0.8);
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  margin-top: 30px;
+  border: 03px solid lightgray;
+  padding: 5px 5px;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .profile_text {
-    text-align: center;
-    align-self: center;
-    margin: 30px 0px;
-    font-size: 22px;
-    font-weight: 600;
+  text-align: center;
+  align-self: center;
+  margin: 30px 0px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-.editable {}
+.editable {
+}
 
 .editable_text_gray {
-    color: #aaa;
-    padding: 5px 0px;
+  color: #aaa;
+  padding: 5px 0px;
 }
 
 .detail {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
 }
 
 .editable_text_email {
-    color: #6d6d6d;
-    padding: 5px 0px;
+  color: #6d6d6d;
+  padding: 5px 0px;
 }
 
 .date {
-    display: flex;
-    margin-left: 16%;
-    margin-top: 30px;
-    margin-bottom: 50px;
+  display: flex;
+  margin-left: 16%;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .date_left {
-    margin-left: 43%;
+  margin-left: 43%;
 }
 
 .date_text {
-    height: 38px;
-    font-size: 16px;
+  height: 38px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.table_main {
+  width: 80%;
+  margin: auto;
+}
+
+.table_box_text1 {
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #292a2d;
+}
+
+.table_box_text2 {
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #00b289;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.bill_detail {
+  display: flex;
+  justify-content: space-around;
+}
+.bill_total {
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.percent_input {
+  border: 2px dashed gray;
+  border-width: 0 0 2px;
+}
+
+.info_box_parent{
+    width: 75%;
+    margin: auto;
+}
+.info_title {
+    font-size: 12px;
     font-weight: 500;
-    cursor: pointer;
+    letter-spacing: 1.2px;
+    color: #aaa;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.info_box{
+margin-bottom: 30px;
+}
+
+.bill_subtotal{
+display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.table_detail_text{
+    color: #00b289;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+}
+.bill_detail{
+margin-bottom: 10px;
+}
+.payment_option{
+    color: #00b289;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 5px;
 }

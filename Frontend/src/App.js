@@ -1,6 +1,5 @@
 import "./App.css";
-import Invoice from "./Pages/Invoice";
-import Project from "./Pages/Project";
+
 
 
 
@@ -8,6 +7,19 @@ import Project from "./Pages/Project";
 function App() {
   return (
     <div>
+
+
+      {/* <Trialbox/> */}
+      {/* <MainRoutes></MainRoutes> */}
+     
+      {/* <DashSidebar/> */}
+    <Homepage1/>
+
+      {/* <Dashboard></Dashboard> */}
+
+      {/* <Noinvoicebox/> */}
+      {/* <Invoiceedit/> */}
+
 
     </div>
   );

@@ -18,7 +18,7 @@ function App() {
       {/* <DashSidebar/> */}
 
 
-      <Dashboard></Dashboard>
+      {/* <Dashboard></Dashboard> */}
 
       {/* <Noinvoicebox/> */}
       {/* <Invoiceedit/> */}

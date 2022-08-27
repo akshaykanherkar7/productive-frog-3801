@@ -1,49 +1,92 @@
 .main {
     width: 50%;
     margin: auto;
+}
 
+.top_buttons {
+    display: flex;
+    justify-content: space-between;
 }
-.top_buttons{
-display: flex;
-justify-content: space-between;
-}
-.top_buttons_right{
-display: flex;
-gap: 8%;
+
+.top_buttons_right {
+    display: flex;
+    gap: 8%;
 }
 
 .editbox_main {
     margin-top: 50px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+        rgb(209, 213, 219) 0px 0px 0px 1px inset;
     height: 1000px;
     padding: 10px 0px;
 }
-.invoiceNum{
+
+.invoiceNum {
     display: flex;
+    align-items: center;
     padding-left: 0;
 }
-.editbox_top{
-    display: flex;  
-    justify-content: space-between;  
+
+.editbox_top {
+    display: flex;
+    justify-content: space-between;
 }
-.profile{
-  margin: auto;
-  width: 100%;
+
+.profile {
+    margin: auto;
+    width: 100%;
 }
-.profile_image{
+
+.profile_image {
     width: 20%;
     height: 20%;
-margin: auto;
-margin-top: 30px;
-border: 03px solid lightgray;
-padding: 5px 5px;
-background: rgba(255, 255, 255, 0.8);
+    margin: auto;
+    margin-top: 30px;
+    border: 03px solid lightgray;
+    padding: 5px 5px;
+    background: rgba(255, 255, 255, 0.8);
 }
-.profile_text{
-   text-align: center;
+
+.profile_text {
+    text-align: center;
     align-self: center;
     margin: 30px 0px;
     font-size: 22px;
     font-weight: 600;
-   
+}
+
+.editable {}
+
+.editable_text_gray {
+    color: #aaa;
+    padding: 5px 0px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.editable_text_email {
+    color: #6d6d6d;
+    padding: 5px 0px;
+}
+
+.date {
+    display: flex;
+    margin-left: 16%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.date_left {
+    margin-left: 43%;
+}
+
+.date_text {
+    height: 38px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
 }

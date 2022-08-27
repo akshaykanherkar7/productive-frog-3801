@@ -1,9 +1,16 @@
 import {
   Button,
   ButtonGroup,
+  Divider,
   Flex,
   Icon,
   IconButton,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverTrigger,
   Select,
   Table,
   TableCaption,
@@ -15,10 +22,10 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import invoicetable from "./invoicetable.module.css";
 import { BiSearch } from "react-icons/bi";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { VscTriangleUp, VscTriangleDown } from "react-icons/vsc";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import {
@@ -36,19 +43,27 @@ import {
 } from "@chakra-ui/react";
 import Noinvoices from "./Noinvoices.module.css";
 
+
 const Invoicestable = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const [show, setshow] = useState(false);
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+
+  const handleclick=()=>{
+  setshow(!show)
+   }
+
   return (
     <div>
       <div className={invoicetable.buttons_box}>
         <ButtonGroup size="md" isAttached variant="outline">
           <IconButton aria-label="Add to friends" icon={<BiSearch />} />
-          <Button>
+          <Button onClick={handleclick}>
             Filter
-            <Icon marginTop={"10%"} marginLeft={"20%"} as={ChevronDownIcon} />
+           {show?  <Icon marginTop={"10%"} marginLeft={"20%"} as={ChevronDownIcon} />:
+
+            <Icon marginTop={"10%"} marginLeft={"20%"} as={ChevronUpIcon} />}
           </Button>
         </ButtonGroup>
         <Modal
@@ -106,6 +121,53 @@ const Invoicestable = () => {
           Create an Invoice
         </Button>
       </div>
+    {show? <div className={invoicetable.filter_box_parent}>
+        <div className={invoicetable.filter_box}>
+          <div className={invoicetable.select_name}>
+            <p>PROJECT</p>
+            <Select
+              className={invoicetable.filter_select}
+              placeholder="Select..."
+            >
+              <option  value="option1">Drafted</option>
+              <option  value="option2">Scheduled</option>
+              <option  value="option3">Outstanding</option>
+              <option  value="option1">Overdue</option>
+              <option  value="option1">Pending</option>
+              <option  value="option1">Paid</option>
+            </Select>
+          </div>
+          <div className={invoicetable.select_name}>
+            <p>STATUS</p>
+            <Select
+              className={invoicetable.filter_select}
+              placeholder="Select..."
+            >
+              <option value="option1">Drafted</option>
+              <option value="option2">Scheduled</option>
+              <option value="option3">Outstanding</option>
+              <option value="option1">Overdue</option>
+              <option value="option1">Pending</option>
+              <option value="option1">Paid</option>
+            </Select>
+          </div>
+          <div className={invoicetable.select_name}>
+            <p>CLIENT</p>
+            <Select
+              className={invoicetable.filter_select}
+              placeholder="Select..."
+            >
+              <option value="option1">Drafted</option>
+              <option value="option2">Scheduled</option>
+              <option value="option3">Outstanding</option>
+              <option value="option1">Overdue</option>
+              <option value="option1">Pending</option>
+              <option value="option1">Paid</option>
+            </Select>
+          </div>
+        </div>
+      </div>:""
+      }
       <div className={invoicetable.table}>
         <TableContainer>
           <Table variant="simple">
@@ -114,29 +176,37 @@ const Invoicestable = () => {
                 <Th display={"flex"}>
                   ISSUE ON
                   <div className={invoicetable.triangles}>
-                    <Icon  as={VscTriangleUp} /> <Icon marginTop={"-5px"} as={VscTriangleDown} />
+                    <Icon as={VscTriangleUp} />
+                    <Icon
+                      className={invoicetable.trianglesdown}
+                      as={VscTriangleDown}
+                    />
                   </div>
                 </Th>
                 <Th isNumeric>
                   <Flex>
-                  
-                      <div>DUE DATE</div>
-                      
-                      <div className={invoicetable.triangles}>
-                        <Icon as={VscTriangleUp} />{" "}
-                        <Icon as={VscTriangleDown} />
-                      </div>
-                   
+                    <div>DUE DATE</div>
+
+                    <div className={invoicetable.triangles}>
+                      <Icon as={VscTriangleUp} />
+                      <Icon
+                        className={invoicetable.trianglesdown}
+                        as={VscTriangleDown}
+                      />
+                    </div>
                   </Flex>
                 </Th>
-
-                <Th isNumeric>PROJECT</Th>
                 <Th display={"flex"} isNumeric>
                   #
                   <div className={invoicetable.triangles}>
-                    <Icon as={VscTriangleUp} /> <Icon as={VscTriangleDown} />
+                    <Icon as={VscTriangleUp} />
+                    <Icon
+                      className={invoicetable.trianglesdown}
+                      as={VscTriangleDown}
+                    />
                   </div>
                 </Th>
+                <Th isNumeric>PROJECT</Th>
                 <Th isNumeric>CLIENT</Th>
                 <Th isNumeric>TOTAL</Th>
                 <Th isNumeric>PAID</Th>
@@ -153,93 +223,52 @@ const Invoicestable = () => {
                 <Td isNumeric>25.4</Td>
                 <Td isNumeric>25.4</Td>
                 <Td isNumeric>
-                  <Icon
-                    width={"30px"}
-                    height={"25px"}
-                    as={BiDotsHorizontalRounded}
-                  />
+                  <Popover marginLeft="50px">
+                    <PopoverTrigger>
+                      <Button>
+                        <Icon
+                          width={"30px"}
+                          height={"25px"}
+                          as={BiDotsHorizontalRounded}
+                        />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent>
+                      <PopoverArrow />
+                      <PopoverBody>
+                        <Flex className={invoicetable.dots_menu}>
+                          <p className={invoicetable.dots_menu_text}>
+                            Previe Invoice
+                          </p>
+                          <p className={invoicetable.dots_menu_text}>
+                            Edit Invoice
+                          </p>
+                          <p className={invoicetable.dots_menu_text}>
+                            Mark as Paid
+                          </p>
+                          <p className={invoicetable.dots_menu_text}>
+                            Duplicate
+                          </p>
+                          <p className={invoicetable.dots_menu_text}>
+                            Delete Invoice
+                          </p>
+                          <Divider orientation="horizontal" />
+                          <p className={invoicetable.dots_menu_text}>
+                            View Project
+                          </p>
+                          <p className={invoicetable.dots_menu_text}>
+                            Default Settings
+                          </p>
+                          <p className={invoicetable.dots_menu_text}>
+                            Manage Reminders
+                          </p>
+                        </Flex>
+                      </PopoverBody>
+                    </PopoverContent>
+                  </Popover>
                 </Td>
               </Tr>
-              <Tr className={invoicetable.table_row}>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>
-                  <Icon
-                    width={"30px"}
-                    height={"25px"}
-                    as={BiDotsHorizontalRounded}
-                  />
-                </Td>
-              </Tr>
-              <Tr className={invoicetable.table_row}>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>
-                  <Icon
-                    width={"30px"}
-                    height={"25px"}
-                    as={BiDotsHorizontalRounded}
-                  />
-                </Td>
-              </Tr>
-              <Tr className={invoicetable.table_row}>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>
-                  <Icon
-                    width={"30px"}
-                    height={"25px"}
-                    as={BiDotsHorizontalRounded}
-                  />
-                </Td>
-              </Tr>
-              <Tr className={invoicetable.table_row}>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>
-                  <Icon
-                    width={"30px"}
-                    height={"25px"}
-                    as={BiDotsHorizontalRounded}
-                  />
-                </Td>
-              </Tr>
-              <Tr className={invoicetable.table_row}>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>25.4</Td>
-                <Td isNumeric>
-                  <Icon
-                    width={"30px"}
-                    height={"25px"}
-                    as={BiDotsHorizontalRounded}
-                  />
-                </Td>
-              </Tr>
+
             </Tbody>
           </Table>
         </TableContainer>

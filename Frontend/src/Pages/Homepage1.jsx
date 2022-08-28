@@ -248,10 +248,11 @@ const Homepage1 = () => {
         </Wrap>
       </Box>
 
-      <Box w="100%" h="1000px" align="center">
-        <Flex w="80%" pt="15%" p="5%">
-          <Box w="40%" className="leftDivDropdown" fontSize={"1.5rem"}>
-            <Flex
+      <Box w="100%" h="auto"  justify="center">
+        <Wrap justify="center"h="auto" pb="5%" pt="5%" spacing="5%" >
+          <WrapItem  className="leftDivDropdown" fontSize={"1.5rem"}>
+         <Box>
+         <Flex
               p="5%"
               className={proposal ? "animate-charcter" : ""}
               style={{
@@ -471,8 +472,9 @@ const Homepage1 = () => {
               <Box style={{ paddingLeft: "15px" }}>Forms</Box>
             </Flex>
             <hr />
-          </Box>
-          <Box w="70%" className="rightDivDropdown">
+         </Box>
+          </WrapItem>
+          <WrapItem  className="rightDivDropdown">
             {proposal ? (
               <Proposals />
             ) : contract ? (
@@ -490,11 +492,11 @@ const Homepage1 = () => {
             ) : (
               <Forms />
             )}
-          </Box>
-        </Flex>
+          </WrapItem>
+        </Wrap>
       </Box>
 
-      <Box mt="-10%">
+      <Box >
         <Box className="comparisionDiv">
           <Heading size="lg">
             Trusted by 500K+ self-employed workers <br />
@@ -581,28 +583,30 @@ const Homepage1 = () => {
           </Swiper>
         </Box>
       </Box>
-      <Box p="5% 10% 10% 10%">
+      <Box p="5% 10% 10% 10%" >
         <Box
-          className="small_box"
+          
           w="90%"
           m="auto"
-          h="12rem"
-          borderRadius={"8px"}
+          className="small_box" borderRadius={"8px"}
+          p="auto"
+        h={[50,70,170]}
+          
         >
-          <Flex m="auto" pt="5%">
+          <Flex m="auto" p="auto" pt="3%"   className="small_box" borderRadius={"8px"}>
             {" "}
-            <Box m="auto" p="auto">
+            <Box m="auto"p="auto">
               {" "}
-              <Heading fontSize="35px" p="auto">
+              <Heading  fontSize={{ base: '10px',sm:"20px", md: '30px', lg: '35px' }} p="auto" >
                 It’s your business.
                 <br />
                 We’re here to help it grow.
               </Heading>
             </Box>
-            <Box m="auto" p="auto">
+            <Box m="auto" p="auto" >
               {" "}
-              <Button
-                background="#00b289"
+              <Button  display={{ base: 'none',md:"flex" }}
+                background="#00b289" p="auto"
                 _hover={{
                   background: "#00b289",
                   color: "white",
@@ -610,6 +614,16 @@ const Homepage1 = () => {
                 color="white"
               >
                 Start Free
+              </Button>
+              <Button  display={{ base: 'flex',md:"none" }}
+                background="#00b289" p="auto" h="30px" w="40px"
+                _hover={{
+                  background: "#00b289",
+                  color: "white",
+                }}
+                color="white"
+              >
+                Start 
               </Button>
             </Box>
           </Flex>
@@ -641,13 +655,13 @@ const Accounting = () => {
         </Box>
       </Box>
       <Box className="lowerDivSub">
-        <Image
+        <Image 
           className="lowerDivSub"
-          w="30px"
-          h="10px"
+          w="600px"
+          ml="25%"
+          h="500px"
           src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/6050af07c36c35952ad19fbe_Graphic_Accounting-opt.png"
-          height="auto"
-          width="auto"
+         
         />
       </Box>
     </Box>

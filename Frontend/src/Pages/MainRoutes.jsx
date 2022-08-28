@@ -9,12 +9,13 @@ import Invoice from "./Invoice";
 import NoInvoiceBox from "./NoInvoiceBox";
 import Dashboard from "./Dashboard";
 import CashBox from "./CashBox";
+import Invoiceedit from "../Components/Bharat/Invoiceedit ";
 
 const MainRoutes = () => {
   return (
     <div>
       <Routes>
-        {/* <Route path="/" element={<Homepage1 />}></Route> */}
+        <Route path="/" element={<Homepage1 />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
@@ -22,6 +23,7 @@ const MainRoutes = () => {
         <Route path="/project" element={<Project />}></Route>
         <Route path="/noinvoice" element={<NoInvoiceBox />}></Route>
         <Route path="/invoice" element={<Invoice />}></Route>
+        <Route path="/sendinvoice" element={<Invoiceedit />}></Route>
         <Route path="/cash" element={<CashBox />}></Route>
       </Routes>
     </div>

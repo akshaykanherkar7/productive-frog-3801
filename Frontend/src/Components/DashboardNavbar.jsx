@@ -1,5 +1,5 @@
 import { ChevronDownIcon, SearchIcon, TimeIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex, Input,Text,Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Text, Image } from "@chakra-ui/react";
 import React from "react";
 
 const DashboardNavbar = () => {
@@ -47,6 +47,7 @@ const DashboardNavbar = () => {
             <Box w="12%">
               <Flex justifyContent="space-between">
                 <Image
+                  id="mh"
                   cursor={"pointer"}
                   h="30"
                   w="30"

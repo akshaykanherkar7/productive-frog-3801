@@ -50,6 +50,7 @@ import {
   deleteInvoiceAPI,
   getInvoiceAPI,
 } from "../../Redux/Invoice/invoice.action";
+import { useNavigate } from "react-router-dom";
 
 const Invoicestable = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -63,7 +64,8 @@ const Invoicestable = () => {
   const { Invoice } = useSelector((state) => state.invoice);
 
   const token = localStorage.getItem("token");
-  const toast = useToast()
+  const toast = useToast();
+  const navigate = useNavigate();
 
   const [issuedon, setIssuedon] = useState("");
   const [duedate, setDuedate] = useState("");
@@ -97,6 +99,10 @@ const Invoicestable = () => {
     dispatch(deleteInvoiceAPI(id, token)).then((res) => {
       dispatch(getInvoiceAPI(token));
     });
+  };
+
+  const handleNavigate = () => {
+    navigate("/sendinvoice");
   };
 
   const handleclick = () => {
@@ -155,9 +161,14 @@ const Invoicestable = () => {
                   {Client.length > 0 &&
                     Client.map((el) => {
                       return (
-                        <option value={`${el.clientusername}`}>
-                          {el.clientusername}
-                        </option>
+                        <>
+                          <option hidden disabled selected value>
+                            Client
+                          </option>
+                          <option value={`${el.clientusername}`}>
+                            {el.clientusername}
+                          </option>
+                        </>
                       );
                     })}
                 </Select>
@@ -173,7 +184,12 @@ const Invoicestable = () => {
                 >
                   {Project.length > 0 &&
                     Project.map((el) => (
-                      <option value={`${el.title}`}>{el.title}</option>
+                      <>
+                        <option hidden disabled selected value="Project">
+                          Project
+                        </option>
+                        <option value={`${el.title}`}>{el.title}</option>
+                      </>
                     ))}
                 </Select>
               </FormControl>
@@ -335,7 +351,7 @@ const Invoicestable = () => {
             <Tbody>
               {Invoice.length > 0 &&
                 Invoice.map((el, idx) => (
-                  <Tr>
+                  <Tr onClick={handleNavigate} cursor="pointer">
                     <Td>{el.issuedon}</Td>
                     <Td>{el.duedate}</Td>
                     <Td>{idx + 1}</Td>

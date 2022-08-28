@@ -1,14 +1,10 @@
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import success from "./success.module.css"
-import {useNavigate} from "react-router-dom"
 
 const Success = () => {
       const { isOpen, onOpen, onClose } = useDisclosure()
-      const navigate=useNavigate ()
-      const handleclose=()=>{
-        navigate("/dashboard")
-      }
+
   return (
     <div>
          <Button onClick={onOpen}>Open Modal</Button>

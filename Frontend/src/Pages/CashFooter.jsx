@@ -7,7 +7,7 @@ import {MdPhoneAndroid} from "react-icons/md"
 import {AiOutlineChrome} from "react-icons/ai"
 const CashFooter = () => {
   return (
-    <Box margin={"200px"} w={"85%"} >
+    <Box margin={"200px"} marginTop="-250px" w={"85%"} >
         <Flex direction={"column"}  >
             <HStack h={"50px"} w={"80%"} bg={"white"}  margin={"auto"} justifyContent={"center"} fontFamily={"proxima nova,helvetica neue,helvetica,arial,sans-serif"} fontSize={"10px"} fontWeight={"600"} color={"#CCD0D2"} lineHeight={"1.428571429"}>
                 <span >Feature Requests</span>

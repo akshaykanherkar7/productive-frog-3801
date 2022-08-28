@@ -4,7 +4,7 @@ import MainRoutes from "./Pages/MainRoutes";
 function App() {
   return (
     <div>
-      {/* <MainRoutes></MainRoutes> */}
+      <MainRoutes></MainRoutes>
     </div>
   );
 }

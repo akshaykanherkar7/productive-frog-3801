@@ -17,7 +17,7 @@ export const getInvoiceAPI = (token) => (dispatch) => {
     });
 };
 
-export const createInvoiceAPI = (invoice) => (dispatch) => {
+export const createInvoiceAPI = (invoice,token) => (dispatch) => {
   return axios.post(
     "https://morning-fortress-32806.herokuapp.com/invoice",
     invoice,

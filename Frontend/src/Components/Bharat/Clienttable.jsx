@@ -22,6 +22,7 @@ import {
   Th,
   Thead,
   Tr,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import clienttable from "./clienttable.module.css";
@@ -65,6 +66,7 @@ const Clienttable = () => {
   const dispatch = useDispatch();
   const { Client } = useSelector((state) => state.client);
   const token = localStorage.getItem("token");
+  const toast = useToast()
 
   const handleAddClient = () => {
     let NewClient = {
@@ -75,6 +77,12 @@ const Clienttable = () => {
     };
     dispatch(createClientAPI(NewClient, token)).then((res) => {
       dispatch(getClientAPI(token));
+    });
+    toast({
+      title: "Client Added Successfully",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
     });
     onClose();
   };

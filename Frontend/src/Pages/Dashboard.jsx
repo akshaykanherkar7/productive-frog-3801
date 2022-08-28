@@ -30,6 +30,28 @@ import Dashboardtable from "../Components/DashboardTable1";
 import { DashSidebar } from "../Components/DashSidebar";
 
 const Dashboard = () => {
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  let username = userData.fullname.split(" ")[0];
+
+  const getDate = () => {
+    let today = new Date();
+    let [day, month, date] = (today + "").split(" ");
+    return day + ", " + month + " " + date;
+  };
+
+  const getWish = () => {
+    let today = new Date();
+    let curHr = today.getHours();
+
+    if (curHr < 12) {
+      return "Good Morning";
+    } else if (curHr < 18) {
+      return "Good Afternoon";
+    } else {
+      return "Good Evening";
+    }
+
+  };
   return (
     <div>
       <Box
@@ -94,8 +116,10 @@ const Dashboard = () => {
                   <Flex gap="3">
                     <Image src="https://app.hellobonsai.com/packs/static/good-morning-66f0f5841376d77563ac.svg"></Image>
                     <Box>
-                      <p style={{ color: "gray" }}>Frieday,August 26th</p>
-                      <Heading>Good Morning, Akshay!</Heading>
+                      <p style={{ color: "gray" }}>{getDate()}</p>
+                      <Heading>
+                        {getWish()}, {username}!
+                      </Heading>
                     </Box>
                   </Flex>
                 </Box>
@@ -222,13 +246,14 @@ const Dashboard = () => {
                     padding="5"
                   >
                     <Box>
-                      <Center fontSize="20" color="black" >
+                      <Center fontSize="20" color="black">
                         Connect a US, UK or Canadian bank account to
                         automatically import expenses.
                       </Center>
-                      <Center fontSize="12" color="gray">ADD BANK ACCOUNT</Center>
+                      <Center fontSize="12" color="gray">
+                        ADD BANK ACCOUNT
+                      </Center>
                     </Box>
-                    
                   </Box>
                   <Box
                     border="1px solid gray"

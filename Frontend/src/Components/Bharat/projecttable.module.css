@@ -44,6 +44,7 @@
     padding: 11px 20px 9px;
     font-weight: 600;
     color: #6d6d6d;
+    cursor: pointer;
 }
 
 .filter_select {
@@ -51,7 +52,7 @@
 }
 
 .filter_box_parent {
-    margin-left: 230px;
+    margin-left: 70px;
     width: 85%;
     background: rgba(0, 0, 0, 0.02);
     z-index: 10;
@@ -81,3 +82,5 @@
 .crown_icon {
     color: green;
 }
+
+

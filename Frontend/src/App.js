@@ -1,10 +1,12 @@
 import "./App.css";
+import Success from "./Components/Bharat/Success";
 import MainRoutes from "./Pages/MainRoutes";
 
 function App() {
   return (
     <div>
-      <MainRoutes></MainRoutes>
+      {/* <MainRoutes></MainRoutes> */}
+      <Success/>
     </div>
   );
 }

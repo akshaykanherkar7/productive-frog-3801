@@ -9,9 +9,18 @@ import {
   Tfoot,
   Td,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProjectAPI } from "../Redux/Project/project.action";
 
 const Dashboardtable = () => {
+  const dispatch = useDispatch();
+  const { Project } = useSelector((state) => state.project);
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    dispatch(getProjectAPI(token));
+  }, [dispatch]);
   return (
     <TableContainer>
       <Table variant="simple">
@@ -24,21 +33,14 @@ const Dashboardtable = () => {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr>
-            <Td>inches</Td>
-            <Td>millimetres (mm)</Td>
-            <Td isNumeric>25.4</Td>
-          </Tr>
-          <Tr>
-            <Td>feet</Td>
-            <Td>centimetres (cm)</Td>
-            <Td isNumeric>30.48</Td>
-          </Tr>
-          <Tr>
-            <Td>yards</Td>
-            <Td>metres (m)</Td>
-            <Td isNumeric>0.91444</Td>
-          </Tr>
+          {Project.length > 0 &&
+            Project.map((el) => (
+              <Tr>
+                <Td>{el.title}</Td>
+                <Td>{el.startdate}</Td>
+                <Td isNumeric>{el.due}</Td>
+              </Tr>
+            ))}
         </Tbody>
         <Tfoot>
           <Tr>

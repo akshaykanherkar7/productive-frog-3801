@@ -14,9 +14,8 @@ export const loginAPI = (creds) => (dispatch) => {
   return axios
     .post("https://morning-fortress-32806.herokuapp.com/user/login", creds)
     .then((res) => {
-      console.log("res:", res.data);
-      console.log("Token:", res.data.token);
-      dispatch({ type: types.USER_LOGIN_SUCCESS, payload: res.data.token });
+      console.log("res FROM ACTION:", res.data);
+      dispatch({ type: types.USER_LOGIN_SUCCESS, payload: res.data});
       return types.USER_LOGIN_SUCCESS;
     })
     .catch(() => {

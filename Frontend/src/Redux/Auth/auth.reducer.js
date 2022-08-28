@@ -1,5 +1,6 @@
 import * as types from "./auth.actionTypes";
 const initialState = {
+  user: [],
   isLoading: false,
   isError: false,
   token: "",
@@ -17,8 +18,9 @@ export const authReducer = (state = initialState, { type, payload }) => {
     }
 
     case types.USER_LOGIN_SUCCESS: {
-      if (payload) {
-        localStorage.setItem("token", payload);
+      if (payload.token) {
+        localStorage.setItem("token", payload.token);
+        localStorage.setItem("userData", JSON.stringify(payload.data));
       }
       return {
         ...state,

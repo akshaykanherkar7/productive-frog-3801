@@ -1,13 +1,16 @@
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import success from "./success.module.css"
+import { Link } from 'react-router-dom'
 
 const Success = () => {
       const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <div>
-         <Button onClick={onOpen}>Open Modal</Button>
+         <Button colorScheme="green" onClick={onOpen}>
+            Send Now
+          </Button>
 
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={ onClose}>
         <ModalOverlay />
@@ -15,12 +18,12 @@ const Success = () => {
           <ModalCloseButton />
           <ModalBody >
                <img src='success.svg'/>
-               <Text className={success.text}>Invice Created successfully !</Text>
+               <Text className={success.text}>Invoice Successfully Send to Client!</Text>
           </ModalBody>
 
           <ModalFooter>
             <Button colorScheme='blue' margin={"auto"} marginTop="20px" onClick={ onClose}>
-              Go to Dashboard
+              <Link to="/dashboard">Go to Dashboard</Link>
             </Button>
           </ModalFooter>
         </ModalContent>

@@ -18,11 +18,19 @@ import {
 import React, { useState } from "react";
 import invoiceedit from "./invoiceedit.module.css";
 import { TbPhoto } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
+import Success from "./Success";
 
 const Invoiceedit = () => {
   const [invoiceNumnber, setinvoiceNumnber] = useState(1001);
   const [accountname, setaccountname] = useState("Bharat Rozodkar");
   const [nameofClient, setnameofClient] = useState("Sample client");
+
+  const navigate = useNavigate();
+
+  const handleSuccess = () => {
+    navigate("/success");
+  };
   return (
     <div className={invoiceedit.main}>
       <div className={invoiceedit.top_buttons}>
@@ -39,7 +47,7 @@ const Invoiceedit = () => {
           <Button colorScheme="gray" variant="outline">
             Schedule Later
           </Button>
-          <Button colorScheme="green">Send Now</Button>
+          <Success></Success>
         </div>
       </div>
       <div className={invoiceedit.editbox_main}>
@@ -176,8 +184,8 @@ const Invoiceedit = () => {
         <hr />
         <div>
           <div className={invoiceedit.bill_subtotal}>
-            <p >Subtotal</p>
-            <p >₹0.00</p>
+            <p>Subtotal</p>
+            <p>₹0.00</p>
           </div>
           <div className={invoiceedit.bill_detail}>
             <p className={invoiceedit.table_detail_text}>Add Discount</p>
@@ -198,40 +206,43 @@ const Invoiceedit = () => {
           <p>Total Amount</p>
           <p>₹0.00 INR</p>
         </div>
-       <div className={invoiceedit.info_box_parent}>
-         <div className={invoiceedit.info_box}>
-          <p className={invoiceedit.info_title}>PAYMENT</p>
-          <p className={invoiceedit.payment_option}>Enable Online Payments</p>
-        </div>
-        <div className={invoiceedit.info_box}>
-          <p className={invoiceedit.info_title}>LATE FEES</p>
-          <p>
-            If this invoice is unpaid by the due date, a non-compounding late
-            fee of{" "}
-            <Input
-              className={invoiceedit.percent_input}
-              htmlSize={2}
-              width="auto"
-              defaultValue={0.0}
-            />
-            % accrues monthly on the outstanding amount.
-          </p>
-        </div>
-        <div className={invoiceedit.info_box}>
-          <p className={invoiceedit.info_title}>TAX ID NUMBER</p>
-          <Editable color={"lightgray"} defaultValue={invoiceNumnber}>
-            <EditablePreview />
-            <EditableInput width={"40%"} />
-          </Editable>
+        <div className={invoiceedit.info_box_parent}>
+          <div className={invoiceedit.info_box}>
+            <p className={invoiceedit.info_title}>PAYMENT</p>
+            <p className={invoiceedit.payment_option}>Enable Online Payments</p>
           </div>
           <div className={invoiceedit.info_box}>
-          <p className={invoiceedit.info_title}>NOTES</p>
-          <Editable color={"lightgray"} defaultValue={"Thank you for your business"}>
-            <EditablePreview />
-            <EditableInput width={"40%"} />
-          </Editable>
+            <p className={invoiceedit.info_title}>LATE FEES</p>
+            <p>
+              If this invoice is unpaid by the due date, a non-compounding late
+              fee of{" "}
+              <Input
+                className={invoiceedit.percent_input}
+                htmlSize={2}
+                width="auto"
+                defaultValue={0.0}
+              />
+              % accrues monthly on the outstanding amount.
+            </p>
+          </div>
+          <div className={invoiceedit.info_box}>
+            <p className={invoiceedit.info_title}>TAX ID NUMBER</p>
+            <Editable color={"lightgray"} defaultValue={invoiceNumnber}>
+              <EditablePreview />
+              <EditableInput width={"40%"} />
+            </Editable>
+          </div>
+          <div className={invoiceedit.info_box}>
+            <p className={invoiceedit.info_title}>NOTES</p>
+            <Editable
+              color={"lightgray"}
+              defaultValue={"Thank you for your business"}
+            >
+              <EditablePreview />
+              <EditableInput width={"40%"} />
+            </Editable>
+          </div>
         </div>
-       </div>
       </div>
     </div>
   );

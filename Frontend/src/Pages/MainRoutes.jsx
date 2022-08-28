@@ -10,6 +10,7 @@ import NoInvoiceBox from "./NoInvoiceBox";
 import Dashboard from "./Dashboard";
 import CashBox from "./CashBox";
 import Invoiceedit from "../Components/Bharat/Invoiceedit ";
+import Success from "../Components/Bharat/Success";
 
 const MainRoutes = () => {
   return (
@@ -25,6 +26,7 @@ const MainRoutes = () => {
         <Route path="/invoice" element={<Invoice />}></Route>
         <Route path="/sendinvoice" element={<Invoiceedit />}></Route>
         <Route path="/cash" element={<CashBox />}></Route>
+        <Route path="/success" element={<Success/>}></Route>
       </Routes>
     </div>
   );

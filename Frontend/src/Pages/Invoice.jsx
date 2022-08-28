@@ -29,6 +29,7 @@ import DashboardNavbar from "../Components/DashboardNavbar";
 import Dashboardtable from "../Components/DashboardTable1";
 import { DashSidebar } from "../Components/DashSidebar";
 import Invoicestable from "../Components/Bharat/Invoicestable"
+import CashFooter from "./CashFooter";
 
 const Invoice = () => {
   return (
@@ -82,6 +83,7 @@ const Invoice = () => {
             <Invoicestable/>
           </Box>
         </Flex>
+        <CashFooter></CashFooter>
       </Box>
     </div>
   )

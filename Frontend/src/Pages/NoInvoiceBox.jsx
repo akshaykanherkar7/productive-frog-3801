@@ -1,39 +1,12 @@
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Grid,
-  Heading,
-  Image,
-  Input,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Text,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
-import {
-  ChevronDownIcon,
-  InfoIcon,
-  MinusIcon,
-  SearchIcon,
-  TimeIcon,
-} from "@chakra-ui/icons";
+import { InfoIcon } from "@chakra-ui/icons";
 import DashboardNavbar from "../Components/DashboardNavbar";
-import Dashboardtable from "../Components/DashboardTable1";
 import { DashSidebar } from "../Components/DashSidebar";
-import Clienttable from "../Components/Bharat/Clienttable";
-import Projecttable from "../Components/Bharat/Projecttable";
+import Noinvoicebox from "../Components/Bharat/Noinvoicebox";
 import CashFooter from "./CashFooter";
-
-
-const Project = () => {
+import CashFooter1 from "./CashFooter1";
+const NoInvoiceBox = () => {
   return (
     <div>
       <Box
@@ -81,14 +54,14 @@ const Project = () => {
                   </a>
                 </Box>
               </Flex>
-              </Box>
-            <Projecttable/>
+            </Box>
+            <Noinvoicebox />
           </Box>
         </Flex>
-        <CashFooter></CashFooter>
-      </Box> 
+        <CashFooter1></CashFooter1>
+      </Box>
     </div>
-  )
-}
+  );
+};
 
-export default Project
+export default NoInvoiceBox;

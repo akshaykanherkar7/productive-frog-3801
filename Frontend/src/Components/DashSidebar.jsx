@@ -13,10 +13,16 @@ import { BsWallet } from "react-icons/bs";
 import { TbReceiptTax } from "react-icons/tb";
 import { ImFileText2 } from "react-icons/im";
 import { AiOutlinePlus, AiOutlineStar } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 export const DashSidebar = () => {
   return (
-    <Box w="15%" h="100%" position="fixed" fontSize="15px" borderRight="1px solid grey">
+    <Box
+      w="15%"
+      h="100%"
+      position="fixed"
+      fontSize="15px"
+      borderRight="1px solid grey"
+    >
       <Box>
         <Flex mt="5%" p="5% 20% 7% 0% " justifyContent="space-between">
           <Box
@@ -44,24 +50,18 @@ export const DashSidebar = () => {
           >
             <AiOutlinePlus color="#00b289" />
           </Box>
-          
         </Flex>
         <Box opacity=".9">
           <Box
             pb="5%"
             display="flex"
-           
             pl="7%"
             flexDirection="column"
-            
             textAlign="left"
-           
             opacity=".8,5"
           >
             <Flex
-            justifyContent="flex-start"
-            
-             
+              justifyContent="flex-start"
               pb="5%"
               _hover={{
                 cursor: "pointer",
@@ -69,12 +69,11 @@ export const DashSidebar = () => {
                 fontWeight: "500",
               }}
             >
-              <Flex m="auto" p="auto"   >
-              
-                <Box m="auto" >
+              <Flex m="auto" p="auto">
+                <Box m="auto">
                   <FiHome />
                 </Box>
-                &nbsp; Dashboard
+                <Link to="/dashboard"> &nbsp; Dashboard</Link>
               </Flex>
               <Spacer />
             </Flex>
@@ -87,18 +86,18 @@ export const DashSidebar = () => {
                 fontWeight: "500",
               }}
             >
-              <Flex m="auto" p="auto"  >
+              <Flex m="auto" p="auto">
                 {" "}
                 <Box m="auto">
                   <IoIosContacts />
                 </Box>
                 <Box>
                   <p>
-                    <Link to="Freetrial">&nbsp;Clients</Link>
+                    <Link to="/client">&nbsp;Clients</Link>
                   </p>
                 </Box>
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
 
             <Flex
@@ -114,13 +113,12 @@ export const DashSidebar = () => {
                 <Box m="auto">
                   <VscFileSubmodule />
                 </Box>
-                &nbsp;Projects
+                <Link to="/project">&nbsp;Projects</Link>
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
           </Box>
-          <Box pb="5%"
-            pl="7%" opacity=".9">
+          <Box pb="5%" pl="7%" opacity=".9">
             <Flex
               pb="5%"
               _hover={{
@@ -136,7 +134,7 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Proposls
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
 
             <Flex
@@ -154,7 +152,7 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Contracts
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
 
             <Flex
@@ -170,13 +168,12 @@ export const DashSidebar = () => {
                 <Box m="auto">
                   <TbFileDollar />
                 </Box>
-                &nbsp;Invoices
+                <Link to="/noinvoice">&nbsp;Invoices</Link>
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
           </Box>
-          <Box pb="5%"
-            pl="7%" opacity=".9">
+          <Box pb="5%" pl="7%" opacity=".9">
             <Flex
               pb="5%"
               _hover={{
@@ -192,7 +189,7 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Time Tracking
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
 
             <Flex
@@ -210,11 +207,10 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Tasks
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
           </Box>
-          <Box pb="5%"
-            pl="7%" opacity=".9">
+          <Box pb="5%" pl="7%" opacity=".9">
             <Flex
               pb="5%"
               _hover={{
@@ -228,9 +224,9 @@ export const DashSidebar = () => {
                 <Box m="auto">
                   <BsWallet />
                 </Box>
-                &nbsp;cash
+                <Link to="/cash">&nbsp;cash</Link>
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
 
             <Flex
@@ -248,7 +244,7 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Accounting
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
 
             <Flex
@@ -266,7 +262,7 @@ export const DashSidebar = () => {
                 </Box>
                 &nbsp;Taxes
               </Flex>
-               <Spacer />
+              <Spacer />
             </Flex>
           </Box>
 
@@ -295,13 +291,12 @@ export const DashSidebar = () => {
             pb="5%"
             mt="180px"
             opacity=".8,5"
-           borderTop='1px solid grey'
-              pt='10%'
+            borderTop="1px solid grey"
+            pt="10%"
             _hover={{
               cursor: "pointer",
               color: "black",
               fontWeight: "500",
-           
             }}
           >
             <Flex m="auto" p="auto">

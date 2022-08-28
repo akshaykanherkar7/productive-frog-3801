@@ -1,42 +1,42 @@
 import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Grid,
-  Heading,
-  Image,
-  Input,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Text,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
-import React from "react";
-import {
-  ChevronDownIcon,
-  InfoIcon,
-  MinusIcon,
-  SearchIcon,
-  TimeIcon,
-} from "@chakra-ui/icons";
-import DashboardNavbar from "../Components/DashboardNavbar";
-import Dashboardtable from "../Components/DashboardTable1";
-import { DashSidebar } from "../Components/DashSidebar";
-import Clienttable from "../Components/Bharat/Clienttable";
-import Projecttable from "../Components/Bharat/Projecttable";
-import CashFooter from "./CashFooter";
+    Box,
+    Button,
+    Center,
+    Flex,
+    Grid,
+    Heading,
+    Image,
+    Input,
+    Table,
+    TableContainer,
+    Tbody,
+    Td,
+    Text,
+    Tfoot,
+    Th,
+    Thead,
+    Tr,
+  } from "@chakra-ui/react";
+  import React from "react";
+  import {
+    ChevronDownIcon,
+    InfoIcon,
+    MinusIcon,
+    SearchIcon,
+    TimeIcon,
+  } from "@chakra-ui/icons";
+  import DashboardNavbar from "../Components/DashboardNavbar";
+  import Dashboardtable from "../Components/DashboardTable1";
+  import { DashSidebar } from "../Components/DashSidebar";
+  import Clienttable from "../Components/Bharat/Clienttable";
+  import Trialbox from "../Components/Bharat/trialbox";
+  import CashFooter from "./CashFooter";
+import Cash from "./Cash";
 
-
-const Project = () => {
+const CashBox = () => {
   return (
     <div>
-      <Box
+        <Box
         // border="1px solid gray"
         h="1020px"
       >
@@ -82,13 +82,12 @@ const Project = () => {
                 </Box>
               </Flex>
               </Box>
-            <Projecttable/>
+            <Cash/>
           </Box>
         </Flex>
-        <CashFooter></CashFooter>
-      </Box> 
+      </Box>
     </div>
   )
 }
 
-export default Project
+export default CashBox

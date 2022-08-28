@@ -86,7 +86,7 @@ const Projecttable = () => {
       dispatch(getProjectAPI(token));
     });
     toast({
-      title: "Project Added Successfully",
+      title: "Project Successfully Added",
       status: "success",
       duration: 2000,
       isClosable: true,

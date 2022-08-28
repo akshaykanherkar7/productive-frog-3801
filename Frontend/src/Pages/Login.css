@@ -1,5 +1,19 @@
 .line{
     background-color: gray;
     width: 90% ;
-    height: 10px;
+    height: 1px;
+    margin-top: 5%;
+}
+
+.changes{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
+    font-size: small;
+}
+
+.line2{
+    background: transparent;
+    width: 90% ;
+    height: 1px;
+    margin-top: 5%;
 }

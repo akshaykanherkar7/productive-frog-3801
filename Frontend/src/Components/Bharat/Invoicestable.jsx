@@ -50,6 +50,17 @@ const Invoicestable = () => {
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
 
+  const [issuedon, setIssuedon] = useState("")
+  const [duedate, setDuedate] = useState("");
+  const [project, setProject] = useState("");
+  const [client, setClient] = useState("")
+  const [total, setTotal] = useState(0);
+  const [paid, setPaid] = useState("")
+
+  const handleCreateInvoce = () => {
+
+  }
+
   const handleclick=()=>{
   setshow(!show)
    }
@@ -82,12 +93,18 @@ const Invoicestable = () => {
 <ModalBody pb={6}>
              <FormControl className={Noinvoices.input_box}>
               <FormLabel className={Noinvoices.form_label}>CLIENT NAME</FormLabel>
-              <Input ref={initialRef} placeholder='Jane Smith' />
+              {/* <Input ref={initialRef} placeholder='Jane Smith' /> */}
+              <Select>
+                <option>Client</option>
+              </Select>
             </FormControl>
 
             <FormControl className={Noinvoices.input_box}>
               <FormLabel className={Noinvoices.form_label}>NEW PROJECT NAME</FormLabel>
-              <Input  placeholder='Homepage Redesign' />
+              {/* <Input  placeholder='Homepage Redesign' /> */}
+              <Select>
+                  <option value="">Project</option>
+              </Select>
             </FormControl>  
             <FormControl className={Noinvoices.input_box}>
               <FormLabel className={Noinvoices.form_label}>ISSUED ON</FormLabel>

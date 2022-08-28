@@ -17,7 +17,7 @@ export const getProjectAPI = (token) => (dispatch) => {
     });
 };
 
-export const createProjectAPI = (project) => (dispatch) => {
+export const createProjectAPI = (project,token) => (dispatch) => {
   return axios.post(
     "https://morning-fortress-32806.herokuapp.com/project",
     project,

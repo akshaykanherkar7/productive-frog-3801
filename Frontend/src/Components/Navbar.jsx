@@ -12,7 +12,7 @@ import {
   useDisclosure,
   useWhyDidYouUpdate,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link as LoginLink} from "react-router-dom";
 import { useEffect } from "react";
 import "./Navbar.css";
 import data from "./data.json";
@@ -256,7 +256,7 @@ useEffect(() =>{
               mr="10%"
               w="45%"
             >
-              Log In
+              <LoginLink to="/login">Log In</LoginLink>
             </Button>
             <Button
               background="#00b289"

@@ -5,12 +5,19 @@ import { ChevronRightIcon} from '@chakra-ui/icons'
 import { Icon } from '@chakra-ui/icons'
 // import { Icon, createIcon } from '@chakra-ui/react'
 import {  FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react"
+import { useNavigate } from 'react-router-dom'
 
 const Noinvoicebox = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
+
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate("/invoice")
+  }
 
   return (
     <div className={Noinvoices.main_box}>
@@ -21,7 +28,7 @@ const Noinvoicebox = () => {
     <div className={Noinvoices.right_box}>
         <p className={Noinvoices.right_box_title}>Easy Invoicing & Payments</p>
         <p className={Noinvoices.right_box_text1}>Send invoices and accept online payments. Schedule them to send in the future, and Bonsai will automatically sends client reminders for payment.</p>
-         <Button onClick={onOpen} colorScheme='green' variant='solid'>Create an Invoice</Button>
+         <Button colorScheme='green' variant='solid' onClick={handleNavigate}>Create an Invoice</Button>
            <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
@@ -30,7 +37,7 @@ const Noinvoicebox = () => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader className={Noinvoices.header} margin={"auto"}>Create an Invoice</ModalHeader>
+          <ModalHeader className={Noinvoices.header} margin={"auto"} >Create an Invoice</ModalHeader>
           <ModalCloseButton />
           <hr className={Noinvoices.hrline}/>
           <ModalBody pb={6}>
@@ -60,7 +67,7 @@ const Noinvoicebox = () => {
           </ModalBody>
            <hr className={Noinvoices.hrline2}/>
           <ModalFooter>
-            <Button colorScheme='green' w={"90%"} margin="auto">
+            <Button colorScheme='green' w={"90%"} margin="auto" >
               Create Invoice
             </Button>
           </ModalFooter>

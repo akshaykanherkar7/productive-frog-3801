@@ -14,6 +14,7 @@ import {
   Container,
   useToast,
 } from "@chakra-ui/react";
+import "./Login.css";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -23,12 +24,16 @@ import { loginAPI } from "../Redux/Auth/auth.action";
 import { USER_LOGIN_SUCCESS } from "../Redux/Auth/auth.actionTypes";
 
 export default function SimpleCard() {
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
+
+  const handleSignup = () => {
+    navigate("/signup");
+  };
 
   const handleLogin = () => {
     const creds = {
@@ -45,7 +50,7 @@ export default function SimpleCard() {
           duration: 4000,
           isClosable: true,
         });
-        navigate("/client");
+        navigate("/dashboard");
       } else {
         toast({
           title: "Login Failed, Credentials are Invalid",
@@ -57,18 +62,6 @@ export default function SimpleCard() {
     });
   };
 
-  // const handleClick = async () => {
-  //     const data = {
-  //         email,
-  //         password
-  //     }
-  //    await fetch("http://localhost:8080/user/login", {
-  //         method : "POST",
-  //         body : JSON.stringify(data),
-  //         headers : {"Content-Type" : "application/json"}
-  //     }).then((res) => res.json()).then((res) => localStorage.setItem("token", res.token)).catch((err) => console.log(err))
-  // }
-
   return (
     <Flex
       minH={"100vh"}
@@ -78,19 +71,36 @@ export default function SimpleCard() {
     >
       <Container
         className="containLog"
-        marginTop="0"
+        padding="10"
         maxW="sm"
-        bg="white"
+        bg={useColorModeValue("white", "gray.700")}
+        boxShadow={"lg"}
         centerContent
       >
-        <Heading size="md">The Changelog</Heading>
+        <Heading fontSize={"smaller"} color={"blackAlpha.900"}>
+          The Changelog
+        </Heading>
+
+        <Box className="line"></Box>
 
         <Box
+          className="changes"
           fontSize="smaller"
-          marginTop="5"
-          padding="4"
-          bg="#00B289"
-          color="white"
+          bg="white"
+          color="gray.800"
+          marginTop={"6"}
+          maxW="md"
+        >
+          You can now create client forms and surveys, no matter which plan you
+          are on. The forms also have an updated, cleaner look.
+        </Box>
+
+        <Box
+          className="changes"
+          fontSize="smaller"
+          marginTop={"6"}
+          bg="white"
+          color="gray.800"
           maxW="sm"
         >
           In your invoice settings, you can now pick “Simplified payment page”.
@@ -100,23 +110,11 @@ export default function SimpleCard() {
         </Box>
 
         <Box
+          className="changes"
           fontSize="smaller"
-          marginTop="5"
-          padding="4"
-          bg="#00B289"
-          color="white"
-          maxW="md"
-        >
-          You can now create client forms and surveys, no matter which plan you
-          are on. The forms also have an updated, cleaner look.
-        </Box>
-
-        <Box
-          fontSize="smaller"
-          marginTop="5"
-          padding="4"
-          bg="#00B289"
-          color="white"
+          bg="white"
+          color="gray.800"
+          marginTop={"6"}
           maxW="md"
         >
           Keep your accounting synced between Bonsai and QuickBooks with the new
@@ -128,23 +126,32 @@ export default function SimpleCard() {
       </Container>
 
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-        <Stack align={"center"}>
-          <Heading style={{ color: "#00B289" }} fontSize={"4xl"}>
-            Sign in to your account
-          </Heading>
-          <Text fontSize={"lg"} color={"gray.600"}>
-            to enjoy all of our cool <Link color={"#00B289"}>features</Link> ✌️
-          </Text>
-        </Stack>
         <Box
+          paddingStart="100"
+          w={"120%"}
+          marginLeft={"-30"}
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
           p={8}
         >
+          <Stack align={"center"}>
+            <Heading
+              marginBottom={"10"}
+              fontWeight="semibold.600"
+              style={{ color: "black" }}
+              fontSize={"2xl"}
+            >
+              Sign In{" "}
+            </Heading>
+            {/* <Text fontSize={'lg'} color={'gray.600'}>
+            to enjoy all of our cool <Link color={'#00B289'}>features</Link> ✌️
+          </Text> */}
+          </Stack>
+
           <Stack spacing={4}>
             <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
+              <FormLabel color={"gray"}>Email address</FormLabel>
               <Input
                 type="email"
                 value={email}
@@ -154,7 +161,7 @@ export default function SimpleCard() {
               />
             </FormControl>
             <FormControl id="password">
-              <FormLabel>Password</FormLabel>
+              <FormLabel color={"gray"}>Password</FormLabel>
               <Input
                 type="password"
                 value={password}
@@ -170,7 +177,6 @@ export default function SimpleCard() {
                 justify={"space-between"}
               >
                 <Checkbox>Remember me</Checkbox>
-                <Link color={"#00B289"}>Forgot password?</Link>
               </Stack>
               <Button
                 onClick={handleLogin}
@@ -184,6 +190,27 @@ export default function SimpleCard() {
               </Button>
             </Stack>
           </Stack>
+          <Box align={"center"} justify={"center"}>
+            <Box className="line2"></Box>
+
+            <Link marginTop="100px" color={"#00B289"}>
+              Reset password?
+            </Link>
+            <Link marginTop="100px" color={"blue"} onClick={handleSignup}>
+              SignUp
+            </Link>
+
+            <Box className="line2"></Box>
+
+            <Link
+              margin="10"
+              justifyContent="center"
+              color={"#00B289"}
+              href="https://app.hellobonsai.com/users/confirmation/new"
+            >
+              Resend Verification Email
+            </Link>
+          </Box>
         </Box>
       </Stack>
     </Flex>

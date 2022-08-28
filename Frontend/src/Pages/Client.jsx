@@ -30,6 +30,7 @@ import Dashboardtable from "../Components/DashboardTable1";
 import { DashSidebar } from "../Components/DashSidebar";
 import Clienttable from "../Components/Bharat/Clienttable";
 import Trialbox from "../Components/Bharat/trialbox";
+import CashFooter from "./CashFooter";
 
 const Client = () => {
   return (
@@ -83,6 +84,7 @@ const Client = () => {
             <Clienttable/>
           </Box>
         </Flex>
+        <CashFooter></CashFooter>
       </Box>
     </div>
   );

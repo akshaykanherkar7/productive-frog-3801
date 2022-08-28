@@ -81,12 +81,12 @@ const Projecttable = () => {
       due: due,
       paid: paid,
     };
-    console.log(NewProject)
+    console.log(NewProject);
     dispatch(createProjectAPI(NewProject, token)).then((res) => {
       dispatch(getProjectAPI(token));
     });
     toast({
-      title: "Project Added Successfully",
+      title: "Project Successfully Added",
       status: "success",
       duration: 2000,
       isClosable: true,
@@ -95,10 +95,10 @@ const Projecttable = () => {
   };
 
   const handleDeleteProject = (id) => {
-    dispatch(deleteProjectAPI(id,token)).then((res) => {
-      dispatch(getProjectAPI(token))
-    })
-  }
+    dispatch(deleteProjectAPI(id, token)).then((res) => {
+      dispatch(getProjectAPI(token));
+    });
+  };
 
   const handleclick = () => {
     setshow(!show);
@@ -147,9 +147,12 @@ const Projecttable = () => {
                 </FormLabel>
                 <Select onChange={(e) => setClient(e.target.value)}>
                   {Client.map((el) => (
-                    <option value={`${el.clientusername}`}>
-                      {el.clientusername}
-                    </option>
+                    <>
+                      <option hidden disabled selected value>Client</option>
+                      <option value={`${el.clientusername}`}>
+                        {el.clientusername}
+                      </option>
+                    </>
                   ))}
                 </Select>
               </FormControl>
@@ -210,7 +213,6 @@ const Projecttable = () => {
       {show ? (
         <div className={projecttable.filter_box_parent}>
           <div className={projecttable.filter_box}>
-
             <div className={projecttable.select_name}>
               <p>STATUS</p>
               <Select
@@ -222,7 +224,7 @@ const Projecttable = () => {
                 <option value="option3">Archieved</option>
               </Select>
             </div>
-                        <div className={projecttable.select_name}>
+            <div className={projecttable.select_name}>
               <p>CLIENT</p>
               <Select
                 className={projecttable.filter_select}
@@ -283,57 +285,56 @@ const Projecttable = () => {
               </Tr>
             </Thead>
             <Tbody>
-              {
-                Project.map((el) => (
-                  <Tr>
-                <Td>{el.title}</Td>
-                <Td>{el.client}</Td>
-                <Td>{el.startdate}</Td>
-                <Td>{el.due}</Td>
-                <Td>{el.paid}</Td>
-                <Td>
-                  <Popover marginLeft="50px">
-                    <PopoverTrigger>
-                      <Button>
-                        <Icon
-                          width={"30px"}
-                          height={"25px"}
-                          as={BiDotsHorizontalRounded}
-                        />
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent>
-                      <PopoverArrow />
-                      <PopoverBody>
-                        <Flex className={projecttable.dots_menu}>
-                          <p className={projecttable.dots_menu_text}>
-                            View Project
-                          </p>
-                          <p className={projecttable.dots_menu_text}>
-
-                            Update Client
-                          </p>
-                          <p className={projecttable.dots_menu_text} onClick={() => handleDeleteProject(el._id)}>
-                            Delete Client
-                          </p>
-                          <p className={projecttable.dots_menu_text}>
-                            Invite to Client Portal
-                          </p>
-                                                    <p className={projecttable.dots_menu_text}>
-                            Archieve Project
-                          </p>
-                                                    <p className={projecttable.dots_menu_text}>
-                            Delete Project
-                          </p>
-
-                        </Flex>
-                      </PopoverBody>
-                    </PopoverContent>
-                  </Popover>
-                </Td>
-              </Tr>
-                ))
-              }
+              {Project.map((el) => (
+                <Tr>
+                  <Td>{el.title}</Td>
+                  <Td>{el.client}</Td>
+                  <Td>{el.startdate}</Td>
+                  <Td>{el.due}</Td>
+                  <Td>{el.paid}</Td>
+                  <Td>
+                    <Popover marginLeft="50px">
+                      <PopoverTrigger>
+                        <Button>
+                          <Icon
+                            width={"30px"}
+                            height={"25px"}
+                            as={BiDotsHorizontalRounded}
+                          />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <PopoverArrow />
+                        <PopoverBody>
+                          <Flex className={projecttable.dots_menu}>
+                            <p className={projecttable.dots_menu_text}>
+                              View Project
+                            </p>
+                            <p className={projecttable.dots_menu_text}>
+                              Update Client
+                            </p>
+                            <p
+                              className={projecttable.dots_menu_text}
+                              onClick={() => handleDeleteProject(el._id)}
+                            >
+                              Delete Client
+                            </p>
+                            <p className={projecttable.dots_menu_text}>
+                              Invite to Client Portal
+                            </p>
+                            <p className={projecttable.dots_menu_text}>
+                              Archieve Project
+                            </p>
+                            <p className={projecttable.dots_menu_text}>
+                              Delete Project
+                            </p>
+                          </Flex>
+                        </PopoverBody>
+                      </PopoverContent>
+                    </Popover>
+                  </Td>
+                </Tr>
+              ))}
             </Tbody>
           </Table>
         </TableContainer>

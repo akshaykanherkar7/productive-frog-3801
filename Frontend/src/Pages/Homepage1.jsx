@@ -250,8 +250,8 @@ const Homepage1 = () => {
 
       <Box w="100%" h="auto"  justify="center">
         <Wrap justify="center"h="auto" pb="5%" pt="5%" spacing="5%" >
-          <WrapItem  className="leftDivDropdown" fontSize={"1.5rem"}>
-         <Box>
+          <WrapItem  className="leftDivDropdown" fontSize={"1.5rem"} >
+         <Box w="400px" fontWeight="600">
          <Flex
               p="5%"
               className={proposal ? "animate-charcter" : ""}
@@ -555,7 +555,7 @@ const Homepage1 = () => {
 
       <Box>
         <Heading
-          fontSize="2rem"
+          fontSize={["20px","30px","35px"]}
           opacity=".9"
           fontWeight="500"
           justify="center"

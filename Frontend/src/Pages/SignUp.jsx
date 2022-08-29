@@ -22,6 +22,7 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import { registerAPI } from "../Redux/Auth/auth.action";
 import { useNavigate } from "react-router-dom";
+import { Navbar } from "../Components/Navbar";
 
 export default function SignupCard() {
   const [showPassword, setShowPassword] = useState(false);
@@ -67,7 +68,9 @@ export default function SignupCard() {
   // }
 
   return (
-    <Flex
+    <Box>
+      <Navbar></Navbar>
+      <Flex
       minH={"100vh"}
       align={"center"}
       justify={"center"}
@@ -1018,5 +1021,6 @@ export default function SignupCard() {
         </Box>
       </Stack>
     </Flex>
+    </Box>
   );
 }

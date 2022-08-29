@@ -12,8 +12,9 @@ import {
   useDisclosure,
   useWhyDidYouUpdate,
 } from "@chakra-ui/react";
-import { Link as LoginLink} from "react-router-dom";
+import { Link as LoginLink } from "react-router-dom";
 import { useEffect } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import "./Navbar.css";
 import data from "./data.json";
 import { ComponentModel } from "./ComponentModel";
@@ -23,7 +24,6 @@ export const Navbar = () => {
   // setDat(data[0])
   // console.log(data)
   useEffect(() => {
-
     const toggleProductUp = (element) => {
       element.style.display = "block";
       element.addEventListener("mouseover", () => {
@@ -121,15 +121,15 @@ export const Navbar = () => {
     // console.log(typeof(dat))
   }, []);
   const { isOpen, onOpen, onClose } = useDisclosure();
-// console.log(data[0])
-useEffect(() =>{
-  setDat(data[0])
-},[])
+  // console.log(data[0])
+  useEffect(() => {
+    setDat(data[0]);
+  }, []);
   return (
-    <Box className="nav"> 
+    <Box className="nav">
       <Box boxShadow="md" rounded="md" bg="white">
-        <Box 
-        //  display={{ base: 'none', md: 'flex' }}
+        <Box
+          //  display={{ base: 'none', md: 'flex' }}
           pl="10%"
           pt="1%"
           pr="10%"
@@ -139,55 +139,72 @@ useEffect(() =>{
           gap="5%"
           h="70px"
         >
-           <IconButton
-           m="auto"
-
-            size={'md'}
+          <IconButton
+            m="auto"
+            size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-           {isOpen ? (
-          <Box  mt="70px" w="100%" boxShadow="md" display={{ md: 'none' }}>
-            <Stack   pt="15%" pb="25%" pl="130%" justify="center" opacity={".9"} boxShadow="md" ml="-100%" fontSize={"1.5rem"} w="350%" bg="white" spacing={4}>
-            <Box justify="center" >
-                Product <i class="fa-solid fa-caret-down"></i>
-              </Box>
-              <Box>
-                Templates <i class="fa-solid fa-caret-down"></i>
-              </Box>
-              <Box
-              _hover={{
-                cursor: "pointer",
-              }}
-            >
-              Pricing
+          {isOpen ? (
+            <Box mt="70px" w="100%" boxShadow="md" display={{ md: "none" }}>
+              <Stack
+                pt="15%"
+                pb="25%"
+                pl="130%"
+                justify="center"
+                opacity={".9"}
+                boxShadow="md"
+                ml="-100%"
+                fontSize={"1.5rem"}
+                w="350%"
+                bg="white"
+                spacing={4}
+              >
+                <Box justify="center">
+                  Product <i class="fa-solid fa-caret-down"></i>
+                </Box>
+                <Box>
+                  Templates <i class="fa-solid fa-caret-down"></i>
+                </Box>
+                <Box
+                  _hover={{
+                    cursor: "pointer",
+                  }}
+                >
+                  Pricing
+                </Box>
+                <Box
+                  _hover={{
+                    cursor: "pointer",
+                  }}
+                >
+                  Reviews
+                </Box>
+              </Stack>
             </Box>
-            <Box
-              _hover={{
-                cursor: "pointer",
-              }}
-            >
-              Reviews
-            </Box>
-            </Stack>
-          </Box>
-        ) : null}
-          <Spacer   display={{ md: 'none' }}/>
-          <Spacer   display={{ md: 'none' }}/>
-          <Spacer   display={{ md: 'none' }}/>
-          <Box m="auto"  display={{ base:"none", md: 'flex' }}>
+          ) : null}
+          <Spacer display={{ md: "none" }} />
+          <Spacer display={{ md: "none" }} />
+          <Spacer display={{ md: "none" }} />
+          <Box m="auto" display={{ base: "none", md: "flex" }}>
             <Image
-              p="5%" mb="7%"
+              p="5%"
+              mb="7%"
               w="75%"
               src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7cd432feb68e_bonsai-logo.svg"
               alt="Logo"
             />
           </Box>
-          <Flex m="auto"p="auto" justify="end"   display={{  base:"flex", md: 'none'}}>
+          <Flex
+            m="auto"
+            p="auto"
+            justify="end"
+            display={{ base: "flex", md: "none" }}
+          >
             <Image
-              p="5%" 
+              p="5%"
               w="55%"
               src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7cd432feb68e_bonsai-logo.svg"
               alt="Logo"
@@ -195,7 +212,7 @@ useEffect(() =>{
           </Flex>
           <Flex
             color="grey"
-            display={{ base: 'none', md: 'flex' }}
+            display={{ base: "none", md: "flex" }}
             justifyContent="center"
             w="60%"
             gap="10%"
@@ -233,18 +250,22 @@ useEffect(() =>{
                 cursor: "pointer",
               }}
             >
-              Pricing
+              <RouterLink to="/pricing">Pricing</RouterLink>
             </Box>
             <Box
               _hover={{
                 cursor: "pointer",
               }}
             >
-              Reviews
+              <RouterLink to="/review">Reviews</RouterLink>
             </Box>
           </Flex>
 
-          <Box position="relative"display={{ base: 'none', md: 'flex' }}  w="20%">
+          <Box
+            position="relative"
+            display={{ base: "none", md: "flex" }}
+            w="20%"
+          >
             <Button
               colorScheme="white"
               color="#00b289"
@@ -327,7 +348,7 @@ useEffect(() =>{
       >
         {" "}
         <Box w="45%">
-          <Box pt="-10%"  opacity=".92" fontSize={15}>
+          <Box pt="-10%" opacity=".92" fontSize={15}>
             {" "}
             <Flex
               id="pehla"
@@ -453,18 +474,23 @@ useEffect(() =>{
           </Box>
         </Box>
         <Box>
-         
-          <Box >
-            {
-              data.length>1?<ComponentModel opacity=".72"  item={dat} />:<ComponentModel item={data[0]} />
-            }
+          <Box>
+            {data.length > 1 ? (
+              <ComponentModel opacity=".72" item={dat} />
+            ) : (
+              <ComponentModel item={data[0]} />
+            )}
 
             <Flex
-            m="auto" p="auto"
-             position="absolute"
+              m="auto"
+              p="auto"
+              position="absolute"
               color="#00b289"
-              bottom='0'
-              textAlign="center" justifyContent="center" ml="17%" mb="5%"
+              bottom="0"
+              textAlign="center"
+              justifyContent="center"
+              ml="17%"
+              mb="5%"
               fontWeight={600}
             >
               See All Templates

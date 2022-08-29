@@ -26,6 +26,8 @@ import { FaCheckCircle } from 'react-icons/fa';
  import { MdKeyboardArrowRight } from 'react-icons/md';
 
 import {Link as RouterLink} from "react-router-dom"
+import { Navbar } from '../Components/Navbar';
+import { Footer } from '../Components/Footer';
 
 
 function PriceWrapper({ children }) {
@@ -53,7 +55,7 @@ export default function Pricing() {
   return (
   
     <Box >
-      
+      <Navbar></Navbar>
        <Box  overflow={"visible"} bg={"#F2FAFF"} style={{positon:"relative",width:"100%",height:"600px",clipPath:"polygon(50% 0% , 100% 0%,100% 50% ,50% 100%,0% -15%,0% 0%)"}}>
        </Box>
        
@@ -296,7 +298,7 @@ export default function Pricing() {
      
     </Box>
     
-    <Box w={"100%"}  h={"300vh"} color={"gray.500"} style={{marginTop:"400px"}} >
+    <Box w={"100%"}  h={"200vh"} color={"gray.500"} style={{marginTop:"400px"}} >
 
       <Heading textAlign={"center"} fontWeight={400} color={"gray.700"} >Super charge your work with add-ons</Heading>
       <Flex direction={"column"} gap={"50px"} mt={"70px"} justify={"space-around"}  p={4}>
@@ -415,7 +417,7 @@ We’re here to help it grow.</Heading></Stack>
 </Accordion>
     </Stack>
     </Box>
-    
+    <Footer></Footer>
     </Box>
   );
 }

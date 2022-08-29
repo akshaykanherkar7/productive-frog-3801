@@ -11,6 +11,8 @@ import Dashboard from "./Dashboard";
 import CashBox from "./CashBox";
 import Invoiceedit from "../Components/Bharat/Invoiceedit ";
 import Success from "../Components/Bharat/Success";
+import Pricing from "./Pricing";
+import Review from "./Review";
 
 const MainRoutes = () => {
   return (
@@ -27,6 +29,8 @@ const MainRoutes = () => {
         <Route path="/sendinvoice" element={<Invoiceedit />}></Route>
         <Route path="/cash" element={<CashBox />}></Route>
         <Route path="/success" element={<Success/>}></Route>
+        <Route path="/pricing" element={<Pricing/>}></Route>
+        <Route path="/review" element={<Review/>}></Route>
       </Routes>
     </div>
   );

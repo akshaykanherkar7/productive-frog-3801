@@ -63,7 +63,9 @@ export default function SimpleCard() {
   };
 
   return (
-    <Flex
+    <Box>
+      <Navbar></Navbar>
+      <Flex
       minH={"100vh"}
       align={"center"}
       justifyContent={"space-evenly"}
@@ -214,5 +216,6 @@ export default function SimpleCard() {
         </Box>
       </Stack>
     </Flex>
+    </Box>
   );
 }

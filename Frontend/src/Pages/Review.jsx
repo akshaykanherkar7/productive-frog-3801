@@ -2,6 +2,8 @@ import { Box, Flex, Heading, HStack, Image, SimpleGrid, Stack, Text} from '@chak
 import React from 'react'
 import ReviewCard from './ReviewCard'
 import {nanoid} from "nanoid"
+import { Navbar } from '../Components/Navbar'
+import { Footer } from '../Components/Footer'
 
 
 
@@ -152,9 +154,11 @@ const review = [
 
 const Review = () => {
   return (
+<Box>
+  
+  <Navbar></Navbar>
 
-
-    <Box bg={"whitesmoke"} h={"2000vh"} m={"50px auto"} w={"95%"}>
+    <Box bg={"whitesmoke"} h={"fit-content"} m={"50px auto"} w={"95%"}>
 
       <Box textAlign={"center"} margin={"20px 0px 0px 0px"} bg={"white"} p={"4%"} fontFamily={"'Amerigo-bt roman opt',sans-serif;"} color={"#4C525A"}>
         <Heading fontWeight={"400"}>Bonsai Reviews</Heading>
@@ -263,6 +267,8 @@ const Review = () => {
   
 </SimpleGrid>
     </Box>
+    <Footer></Footer>
+      </Box>
   )
 }
 

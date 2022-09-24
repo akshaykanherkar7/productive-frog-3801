@@ -5,7 +5,7 @@ export const getClientAPI = (token) => (dispatch) => {
   dispatch({ type: types.GET_CLIENT_LOADING });
 
   return axios
-    .get("https://morning-fortress-32806.herokuapp.com/client", {
+    .get("https://ancient-scrubland-60473.herokuapp.com/client", {
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -22,7 +22,7 @@ export const getClientAPI = (token) => (dispatch) => {
 export const createClientAPI = (client,token) => (dispatch) => {
   console.log('tokenFromRedux:', token)
   console.log('clientFromRedux:', client)
-  return axios.post("https://morning-fortress-32806.herokuapp.com/client",client, {
+  return axios.post("https://ancient-scrubland-60473.herokuapp.com/client",client, {
     headers: {
       Authorization: "Bearer " + token,
     },
@@ -31,7 +31,7 @@ export const createClientAPI = (client,token) => (dispatch) => {
 
 export const updateClientAPI = (id, updated_client, token) => (dispatch) => {
   return axios.patch(
-    `https://morning-fortress-32806.herokuapp.com/client/${id}`,
+    `https://ancient-scrubland-60473.herokuapp.com/client/${id}`,
     updated_client,
     {
       headers: {
@@ -43,7 +43,7 @@ export const updateClientAPI = (id, updated_client, token) => (dispatch) => {
 
 export const deleteClientAPI = (id, token) => (dispatch) => {
   return axios.delete(
-    `https://morning-fortress-32806.herokuapp.com/client/${id}`,
+    `https://ancient-scrubland-60473.herokuapp.com/client/${id}`,
     {
       headers: {
         Authorization: "Bearer " + token,

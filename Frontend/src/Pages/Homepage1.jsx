@@ -20,6 +20,7 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import "../index.css"
 import { Footer } from "../Components/Footer";
 
 const Homepage1 = () => {
@@ -126,7 +127,7 @@ const Homepage1 = () => {
         <Wrap m="auto" justify="center" w="100%" spacing="5%">
           <WrapItem m="auto" pl="5%"  opacity=".85"> 
           <Box mt="22%" >
-            <Box fontSize={40} pb="2%">
+            <Box className="bs1" fontSize={40} pb="2%">
               Everything you need to
               <br /> run your business.
             </Box>

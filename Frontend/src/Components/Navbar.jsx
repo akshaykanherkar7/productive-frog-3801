@@ -127,11 +127,12 @@ export const Navbar = () => {
   }, []);
   return (
     <Box className="nav">
-      <Box boxShadow="md" rounded="md" bg="white">
+      <Box rounded="md" bg="white">
         <Box
           //  display={{ base: 'none', md: 'flex' }}
           pl="10%"
           pt="1%"
+          
           pr="10%"
           w="100%"
           justifyContent="space-between"
@@ -154,7 +155,7 @@ export const Navbar = () => {
                 pb="25%"
                 pl="130%"
                 justify="center"
-                opacity={".9"}
+                opacity={".97"}
                 boxShadow="md"
                 ml="-100%"
                 fontSize={"1.5rem"}
@@ -188,11 +189,12 @@ export const Navbar = () => {
           <Spacer display={{ md: "none" }} />
           <Spacer display={{ md: "none" }} />
           <Spacer display={{ md: "none" }} />
-          <Box m="auto" display={{ base: "none", md: "flex" }}>
+         
+          <Box m="auto" pl="4%"   display={{ base: "none", md: "flex" }}>
             <Image
               p="5%"
               mb="7%"
-              w="75%"
+              w="86%"
               src="https://assets-global.website-files.com/58868bcd2ef4daaf0f072900/5e5fd7c602ca7cd432feb68e_bonsai-logo.svg"
               alt="Logo"
             />
@@ -211,12 +213,15 @@ export const Navbar = () => {
             />
           </Flex>
           <Flex
-            color="grey"
+          
+            color="black"
+            opacity=".75"
             display={{ base: "none", md: "flex" }}
             justifyContent="center"
-            w="60%"
-            gap="10%"
+            w="45%"
+            gap="8%"
             mt="0.5%"
+            ml="5%"
             // display="flex"
           >
             <Box
@@ -228,7 +233,8 @@ export const Navbar = () => {
               id="1st"
             >
               <Box>
-                Product <i class="fa-solid fa-caret-down"></i>
+                Product <i  class="fa-solid fa-chevron-down"></i>
+                
               </Box>
             </Box>
 
@@ -241,7 +247,7 @@ export const Navbar = () => {
               flexDirection="column"
             >
               <Box>
-                Templates <i class="fa-solid fa-caret-down"></i>
+                Templates <i class="fa-solid fa-chevron-down"></i>
               </Box>
             </Box>
 
@@ -262,20 +268,24 @@ export const Navbar = () => {
           </Flex>
 
           <Box
+          
+              
             position="relative"
             display={{ base: "none", md: "flex" }}
-            w="20%"
+            w="25%"
+
           >
             <Button
               colorScheme="white"
               color="#00b289"
+              h="40px"
               border="1px solid teal"
               _hover={{
                 background: "#00b289",
                 color: "white",
               }}
-              mr="10%"
-              w="45%"
+              mr="5%"
+              w="30%"
             >
               <LoginLink to="/login">Log In</LoginLink>
             </Button>
@@ -348,7 +358,7 @@ export const Navbar = () => {
       >
         {" "}
         <Box w="45%">
-          <Box pt="-10%" opacity=".92" fontSize={15}>
+          <Box pt="-10%" opacity=".97" fontSize={15}>
             {" "}
             <Flex
               id="pehla"

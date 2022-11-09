@@ -1,13 +1,51 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    /* font-family:'Proximanova opt',sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.bs1{
+  font-family:'Amerigo-bt roman opt',sans-serif;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@font-face {
+  font-family: 'Proximanova opt';
+  src: url('https://assets.website-files.com/58868bcd2ef4daaf0f072900/61e054f1b4d4be22816a4fbf_ProximaNova-Light-opt.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proximanova opt';
+  src: url('https://assets.website-files.com/58868bcd2ef4daaf0f072900/61e0521b44b2fa219fd2f919_ProximaNova-Regular-opt.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proximanova opt';
+  src: url('https://assets.website-files.com/58868bcd2ef4daaf0f072900/61e055d8f5e431592522e611_ProximaNova-Semibold-opt.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proximanova opt';
+  src: url('https://assets.website-files.com/58868bcd2ef4daaf0f072900/61e055e60b88eed0ae397e12_ProximaNova-Bold-opt.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Amerigo-bt roman opt';
+  src: url('https://assets.website-files.com/58868bcd2ef4daaf0f072900/61e057646be61a80a58989a3_AmerigoBT-RomanA-opt.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
